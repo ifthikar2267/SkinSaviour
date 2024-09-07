@@ -1,0 +1,166 @@
+ [
+        {
+            "id" : 1,
+            "image" : "./assets/images/Aloevera Gel.jpg",
+            "title" : "Aloevera Gel",
+            "price" : 180
+        },
+
+        {
+            "id" : 2,
+            "image" : "./assets/images/Anti Acne Gel.jpg",
+            "title" : "Anti Acne Gel",
+            "price" :230
+
+        },
+
+        {
+            "id" : 3,
+            "image" : "./assets/images/Basil lemon soap.jpg" ,
+            "title" : "Basil Lemon Soap",
+            "price" : 120
+
+        },
+
+        {
+            "id" : 4,
+            "image" : "./assets/images/Body wash.jpg",
+            "title" : "Body Wash",
+            "price" : 180
+
+        },
+
+        {
+            "id" : 5,
+            "image" : "./assets/images/Charcoal soap.jpg",
+            "title" : "Charcoal Soap",
+            "price" : 150
+
+        },
+
+        {
+            "id" : 6,
+            "image" : "./assets/images/Chocolate Lip Scrub.jpg" ,
+            "title" : "Chocolate Lip Scrub",
+            "price" :200
+
+        },
+
+        {
+            "id" : 7,
+            "image" : "./assets/images/Day cream.jpg",
+            "title" : "Day Cream",
+            "price" :280
+
+        },
+
+        {
+            "id" : 8,
+            "image" : "./assets/images/Hair oil.jpg",
+            "title" : "Herbal Hair Oil",
+            "price" : 180
+
+        },
+
+        {
+            "id" : 9,
+            "image" : "./assets/images/Lip tint.jpg",
+            "title" : "Lip Tint",
+            "price" :180
+
+        },
+
+        {
+            "id" : 10,
+            "image" : "./assets/images/Oats and honey soap.jpg",
+            "title" : "Oats And Honey Soap",
+            "price" : 80
+
+        },
+
+        {
+            "id" : 11,
+            "image" : "./assets/images/Pure coconut oil soap.jpg",
+            "title" : "Pure Coconut Oil",
+            "price" : 100
+
+        },
+
+        {
+            "id" : 12,
+            "image" : "./assets/images/Red wine gel.jpg",
+            "title" : "Red Wine Gel",
+            "price" : 250
+
+        },
+
+        {
+            "id" : 13,
+            "image" : "./assets/images/Saffron Gel.jpg" ,
+            "title" : "Saffron Gel",
+            "price" : 170
+
+        },
+
+        {
+            "id" : 14,
+            "image" : "./assets/images/Serum.jpg",
+            "title" : "Glutathione Serum",
+            "price" : 399
+
+        },
+
+        {
+            "id" : 15,
+            "image" : "./assets/images/Shea butter strawberry lip balm.jpg",
+            "title" : "Shea Butter Strawberry Lip Balm",
+            "price" : 250
+
+        },
+
+        {
+            "id" : 16,
+            "image" : "./assets/images/Skin brightening cream.jpg",
+            "title" : "Skin Brightening Cream",
+            "price" : 280
+
+        },
+
+        {
+            "id" : 17,
+            "image" : "./assets/images/SunScreen lotion.jpg",
+            "title" : "Sunscreen Lotion",
+            "price" : 150
+
+        },
+
+        {
+            "id" : 18,
+            "image" : "./assets/images/Vannila Lip Scrub.jpg",
+            "title" : "Vannila Lip Scrub",
+            "price" : 200
+
+        },
+
+        {
+            "id" : 19,
+            "image" : "./assets/images/Wax powder.jpg" ,
+            "title" : "Wax Powder",
+            "price" : 300
+
+        },
+
+        {
+            "id" : 20,
+            "image" : "./assets/images/Grape Fruit Shampoo.jpeg",
+            "title" : "Grape Fruit Shampoo",
+            "price" : 150
+        },
+
+        {
+            "id" : 21,
+            "image" : "./assets/images/Strawberry Shampoo.jpeg",
+            "title" : "Strawberry Shampoo",
+            "price" : 150
+        }
+]
