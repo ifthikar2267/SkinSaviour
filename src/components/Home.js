@@ -11,6 +11,7 @@ function Home() {
 
   return (
     <div>
+      <h1>welcome</h1>
       <Carousel activeIndex={index} onSelect={handleSelect}>
         <Carousel.Item>
         <div className="img">
