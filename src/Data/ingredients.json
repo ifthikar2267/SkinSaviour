@@ -1,0 +1,195 @@
+[
+    {
+        "id" : 1,
+        "image" : "/assets/images/Aloevera Gel.jpg",
+        "title" : "Aloevera Gel",
+        "price" : 180,
+        "highlights" : "Part A - Carbo mur 940 , Glycerin , Distilled water , Aloevera juice ; Part B - Propylene Glycol , Phenoxy ethanol"
+    },
+
+    {
+        "id" : 2,
+        "image" : "/assets/images/Anti Acne Gel.jpg",
+        "title" : "Anti Acne Gel",
+        "price" :230,
+        "highlights" : "Part A - Carbo mur 940 , Glycerin , Distilled water ; Part B - Propylene Glycol , Phenoxy ethanol "
+
+    },
+
+    {
+        "id" : 3,
+        "image" : "/assets/images/Basil lemon soap.jpg" ,
+        "title" : "Basil Lemon Soap",
+        "price" : 120 , 
+        "highlights" : "Transparent / Goatmilk Base , Lemon Powder , Bentonite Clay , Essential Oils (As per skin type)"
+
+    },
+
+    {
+        "id" : 4,
+        "image" : "/assets/images/Body wash.jpg",
+        "title" : "Body Wash",
+        "price" : 180,
+        "highlights" : ""
+
+    },
+
+    {
+        "id" : 5,
+        "image" : "/assets/images/Charcoal soap.jpg",
+        "title" : "Charcoal Soap",
+        "price" : 150,
+        "highlights" : "Transparent / Goatmilk Base , Charcoal Powder , Bentonite Clay"
+
+    },
+
+    {
+        "id" : 6,
+        "image" : "/assets/images/Chocolate Lip Scrub.jpg" ,
+        "title" : "Chocolate Lip Scrub",
+        "price" :200,
+        "highlights" : "Almond oil , Coco Butter , Coconut oil , Beeswax , Vit E oil "
+
+    },
+
+    {
+        "id" : 7,
+        "image" : "/assets/images/Day cream.jpg",
+        "title" : "Day Cream",
+        "price" :280 ,
+        "highlights" : ""
+
+    },
+
+    {
+        "id" : 8,
+        "image" : "/assets/images/Hair oil.jpg",
+        "title" : "Herbal Hair Oil",
+        "price" : 180,
+        "highlights" : ""
+
+    },
+
+    {
+        "id" : 9,
+        "image" : "/assets/images/Lip tint.jpg",
+        "title" : "Lip Tint",
+        "price" : 180,
+        "highlights" : "Fractionated coconut oil , IPM , Calcium Carbonate , FDA color , Vit E oil "
+
+    },
+
+    {
+        "id" : 10,
+        "image" : "/assets/images/Oats and honey soap.jpg",
+        "title" : "Oats And Honey Soap",
+        "price" : 80,
+        "highlights" : "Transparent / Goatmilk Base , Oats Powder , Honey , Bentonite Clay "
+
+    },
+
+    {
+        "id" : 11,
+        "image" : "/assets/images/Pure coconut oil soap.jpg",
+        "title" : "Pure Coconut Oil Soap",
+        "price" : 100,
+        "highlights" : "Transparent Soap Base , Coconut juice , Essential oils "
+
+    },
+
+    {
+        "id" : 12,
+        "image" : "/assets/images/Red wine gel.jpg",
+        "title" : "Red Wine Gel",
+        "price" : 250,
+        "highlights" : "Part A - Carbo mur 940 , Glycerin , Distilled water , Redwine ; Part B - Propylene Glycol , Phenoxy ethanol "
+
+    },
+
+    {
+        "id" : 13,
+        "image" : "/assets/images/Saffron Gel.jpg" ,
+        "title" : "Saffron Gel",
+        "price" : 170,
+        "highlights" : "Carbomur 940 / Carbopol , Glycerine , Saffron infued water "
+
+    },
+
+    {
+        "id" : 14,
+        "image" : "/assets/images/Serum.jpg",
+        "title" : "Glutathione Serum",
+        "price" : 399,
+        "highlights" : "Water , Glutathione powder , Vitamin C , Proplyn glycol , Poly 20 , Color , Perfume ; Almond oil , Jojoba oil , Lemon essential oil"
+
+    },
+
+    {
+        "id" : 15,
+        "image" : "/assets/images/Shea butter strawberry lip balm.jpg",
+        "title" : "Shea Butter Strawberry Lip Balm",
+        "price" : 250 ,
+        "highlights" : "Almond oil , Coco Butter , Coconut oil , Beeswax , Vit E oil "
+
+    },
+
+    {
+        "id" : 16,
+        "image" : "/assets/images/Skin brightening cream.jpg",
+        "title" : "Skin Brightening Cream",
+        "price" : 280 , 
+        "highlights" : ""
+
+    },
+
+    {
+        "id" : 17,
+        "image" : "/assets/images/SunScreen lotion.jpg",
+        "title" : "Sunscreen Lotion",
+        "price" : 260,
+        "highlights" : ""
+    },
+
+    {
+        "id" : 18,
+        "image" : "/assets/images/Vanilla Lip Scrub.jpg",
+        "title" : "Vanilla Lip Scrub",
+        "price" : 200,
+        "highlights" : "Almond oil , Coco Butter , Coconut oil , Beeswax , Vit E oil"
+
+    },
+
+    {
+        "id" : 19,
+        "image" : "/assets/images/Wax powder.jpg" ,
+        "title" : "Wax Powder",
+        "price" : 300,
+        "highlights" : "Rice flour , Multhani matti , Barium sulphide , Fragrance"
+
+    },
+
+    {
+        "id" : 20,
+        "image" : "/assets/images/Grape Fruit Shampoo.jpeg",
+        "title" : "Grape Fruit Shampoo",
+        "price" : 150,
+        "highlights" : "Grape Fruit juice , Distilled water , Cmc (carbo methyl cellulose) , EDTA , SCI Powder booster "
+    },
+
+    {
+        "id" : 21,
+        "image" : "/assets/images/Strawberry Shampoo.jpeg",
+        "title" : "Strawberry Shampoo",
+        "price" : 150,
+        "highlights" : "Strawberry Fruit juice , Distilled water , Cmc (carbo methyl cellulose) , EDTA , SCI Powder booster  "
+    },
+
+    {
+        "id" : 22,
+        "image" : "/assets/images/vanilla lip balm.jpg",
+        "title" : "Vanilla Lip Balm",
+        "price" : 240 ,
+        "highlights" : "Almond oil , Coco Butter , Coconut oil , Beeswax , Vit E oil , FDA color , Vanilla Powder "
+
+    }
+]
