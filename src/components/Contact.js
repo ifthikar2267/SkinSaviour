@@ -30,7 +30,7 @@ const Contact = () => {
       setErrorMessages('');
   
       // Send the form data to the server
-      fetch('http://localhost:3001/send-email', {
+      fetch('https://skin-saviour-server.vercel.app/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
