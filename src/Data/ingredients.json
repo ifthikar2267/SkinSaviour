@@ -117,15 +117,24 @@
 
     {
         "id" : 14,
-        "image" : "/assets/images/Serum.jpg",
+        "image" : "/assets/images/Glutathione Serum.jpg",
         "title" : "Glutathione Serum",
         "price" : 399,
-        "highlights" : "Water , Glutathione powder , Vitamin C , Proplyn glycol , Poly 20 , Color , Perfume ; Almond oil , Jojoba oil , Lemon essential oil"
+        "highlights" : "Water , Glutathione powder , Vitamin C , Proplyn glycol , Poly 20 , Color , Perfume "
 
     },
 
     {
         "id" : 15,
+        "image" : "/assets/images/GlutathioneBrightening Serum.jpg",
+        "title" : "GlutathioneBrightening Serum",
+        "price" : 599,
+        "highlights" : "Water , Glutathione powder , Vitamin C , Proplyn glycol , Poly 20 , Color , Perfume ; Almond oil , Jojoba oil , Lemon essential oil"
+
+    },
+
+    {
+        "id" : 16,
         "image" : "/assets/images/Shea butter strawberry lip balm.jpg",
         "title" : "Shea Butter Strawberry Lip Balm",
         "price" : 250 ,
@@ -134,7 +143,7 @@
     },
 
     {
-        "id" : 16,
+        "id" : 17,
         "image" : "/assets/images/Skin brightening cream.jpg",
         "title" : "Skin Brightening Cream",
         "price" : 280 , 
@@ -143,7 +152,7 @@
     },
 
     {
-        "id" : 17,
+        "id" : 18,
         "image" : "/assets/images/SunScreen lotion.jpg",
         "title" : "Sunscreen Lotion",
         "price" : 260,
@@ -151,7 +160,7 @@
     },
 
     {
-        "id" : 18,
+        "id" : 19,
         "image" : "/assets/images/Vanilla Lip Scrub.jpg",
         "title" : "Vanilla Lip Scrub",
         "price" : 200,
@@ -160,7 +169,7 @@
     },
 
     {
-        "id" : 19,
+        "id" : 20,
         "image" : "/assets/images/Wax powder.jpg" ,
         "title" : "Wax Powder",
         "price" : 300,
@@ -169,7 +178,7 @@
     },
 
     {
-        "id" : 20,
+        "id" : 21,
         "image" : "/assets/images/Grape Fruit Shampoo.jpeg",
         "title" : "Grape Fruit Shampoo",
         "price" : 150,
@@ -177,7 +186,7 @@
     },
 
     {
-        "id" : 21,
+        "id" : 22,
         "image" : "/assets/images/Strawberry Shampoo.jpeg",
         "title" : "Strawberry Shampoo",
         "price" : 150,
@@ -185,7 +194,7 @@
     },
 
     {
-        "id" : 22,
+        "id" : 23,
         "image" : "/assets/images/vanilla lip balm.jpg",
         "title" : "Vanilla Lip Balm",
         "price" : 240 ,
