@@ -1,181 +1,216 @@
  [
         {
             "id" : 1,
-            "image" : "./assets/images/Aloevera Gel.jpg",
+            "image" : "/assets/images/Aloevera Gel.jpg",
             "title" : "Aloevera Gel",
-            "price" : 180
+            "oldPrice" : 360,
+            "newPrice" : 180
         },
 
         {
             "id" : 2,
-            "image" : "./assets/images/Anti Acne Gel.jpg",
+            "image" : "/assets/images/Anti Acne Gel.jpg",
             "title" : "Anti Acne Gel",
-            "price" :230
+            "oldPrice" : 360,
+            "newPrice" : 230
 
         },
 
         {
             "id" : 3,
-            "image" : "./assets/images/Basil lemon soap.jpg" ,
+            "image" : "/assets/images/Basil lemon soap.jpg" ,
             "title" : "Basil Lemon Soap",
-            "price" : 120
+            "oldPrice" : 199 , 
+            "newPrice" : 120 
 
         },
 
         {
+            
             "id" : 4,
-            "image" : "./assets/images/Body wash.jpg",
+            "image" : "/assets/images/Body wash.jpg",
             "title" : "Body Wash",
-            "price" : 180
+            "oldPrice" : 399,
+            "newPrice" : 180
 
         },
 
         {
             "id" : 5,
-            "image" : "./assets/images/Charcoal soap.jpg",
+            "image" : "/assets/images/Charcoal soap.jpg",
             "title" : "Charcoal Soap",
-            "price" : 150
+            "oldPrice" : 199,
+            "newPrice" : 150
 
         },
 
         {
+           
             "id" : 6,
-            "image" : "./assets/images/Chocolate Lip Scrub.jpg" ,
+            "image" : "/assets/images/Chocolate Lip Scrub.jpg" ,
             "title" : "Chocolate Lip Scrub",
-            "price" :200
-
+            "oldPrice" : 399,
+            "newPrice" : 200
         },
 
         {
             "id" : 7,
-            "image" : "./assets/images/Day cream.jpg",
+            "image" : "/assets/images/Day cream.jpg",
             "title" : "Day Cream",
-            "price" :280
-
+            "oldPrice" : 599 ,
+            "newPrice" : 280
         },
 
         {
             "id" : 8,
-            "image" : "./assets/images/Hair oil.jpg",
+            "image" : "/assets/images/Hair oil.jpg",
             "title" : "Herbal Hair Oil",
-            "price" : 180
+            "oldPrice" : 399,
+            "newPrice" : 180
 
         },
 
         {
             "id" : 9,
-            "image" : "./assets/images/Lip tint.jpg",
-            "title" : "Lip Tint",
-            "price" :180
+        "image" : "/assets/images/Lip tint.jpg",
+        "title" : "Lip Tint",
+        "oldPrice" : 399,
+        "newPrice" : 180
 
         },
 
         {
             "id" : 10,
-            "image" : "./assets/images/Oats and honey soap.jpg",
+            "image" : "/assets/images/Oats and honey soap.jpg",
             "title" : "Oats And Honey Soap",
-            "price" : 80
+            "oldPrice" : 199,
+            "newPrice" : 80
 
         },
 
         {
             "id" : 11,
-            "image" : "./assets/images/Pure coconut oil soap.jpg",
-            "title" : "Pure Coconut Oil",
-            "price" : 100
+            "image" : "/assets/images/Pure coconut oil soap.jpg",
+            "title" : "Pure Coconut Oil Soap",
+            "oldPrice" : 199,
+            "newPrice" : 100
 
         },
 
         {
             "id" : 12,
-            "image" : "./assets/images/Red wine gel.jpg",
+            "image" : "/assets/images/Red wine gel.jpg",
             "title" : "Red Wine Gel",
-            "price" : 250
+            "oldPrice" : 399,
+            "newPrice" : 250
 
         },
 
         {
-            "id" : 13,
-            "image" : "./assets/images/Saffron Gel.jpg" ,
+           "id" : 13,
+            "image" : "/assets/images/Saffron Gel.jpg" ,
             "title" : "Saffron Gel",
-            "price" : 170
+            "oldPrice" : 399,
+            "newPrice" : 170
 
         },
 
         {
             "id" : 14,
-            "image" : "./assets/images/Glutathione Serum.jpg",
+            "image" : "/assets/images/Glutathione Serum.jpg",
             "title" : "Glutathione Serum",
-            "price" : 399
+            "oldPrice" : 899,
+            "newPrice" : 399
 
         },
 
         {
             "id" : 15,
-            "image" : "./assets/images/GlutathioneBrightening Serum.jpg",
+            "image" : "/assets/images/GlutathioneBrightening Serum.jpg",
             "title" : "GlutathioneBrightening Serum",
-            "price" : 599
+            "oldPrice" : 1299,
+            "newPrice" : 599
 
         },
 
         {
-            "id" : 16,
-            "image" : "./assets/images/Shea butter strawberry lip balm.jpg",
+           "id" : 16,
+            "image" : "/assets/images/Shea butter strawberry lip balm.jpg",
             "title" : "Shea Butter Strawberry Lip Balm",
-            "price" : 250
+            "oldPrice" : 399 ,
+            "newPrice" : 280
 
         },
 
         {
-            "id" : 17,
-            "image" : "./assets/images/Skin brightening cream.jpg",
+           "id" : 17,
+            "image" : "/assets/images/Skin brightening cream.jpg",
             "title" : "Skin Brightening Cream",
-            "price" : 280
+            "oldPrice" : 399 , 
+            "newPrice" : 280
 
         },
 
         {
             "id" : 18,
-            "image" : "./assets/images/SunScreen lotion.jpg",
+            "image" : "/assets/images/SunScreen lotion.jpg",
             "title" : "Sunscreen Lotion",
-            "price" : 260
+            "oldPrice" : 599,
+            "newPrice" : 260
 
         },
 
         {
             "id" : 19,
-            "image" : "./assets/images/Vanilla Lip Scrub.jpg",
+            "image" : "/assets/images/Vanilla Lip Scrub.jpg",
             "title" : "Vanilla Lip Scrub",
-            "price" : 200
+            "oldPrice" : 399,
+            "newPrice" : 200
 
         },
 
         {
             "id" : 20,
-            "image" : "./assets/images/Wax powder.jpg" ,
+            "image" : "/assets/images/Wax powder.jpg" ,
             "title" : "Wax Powder",
-            "price" : 300
+            "oldPrice" : 599,
+            "newPrice" : 300
 
         },
 
         {
             "id" : 21,
-            "image" : "./assets/images/Grape Fruit Shampoo.jpeg",
+            "image" : "/assets/images/Grape Fruit Shampoo.jpeg",
             "title" : "Grape Fruit Shampoo",
-            "price" : 150
+            "oldPrice" : 450,
+            "newPrice" : 150
+
         },
 
         {
             "id" : 22,
-            "image" : "./assets/images/Strawberry Shampoo.jpeg",
+            "image" : "/assets/images/Strawberry Shampoo.jpeg",
             "title" : "Strawberry Shampoo",
-            "price" : 150
+            "oldPrice" : 450,
+            "newPrice" : 150
+
         },
 
         {
             "id" : 23,
-            "image" : "./assets/images/vanilla lip balm.jpg",
+            "image" : "/assets/images/vanilla lip balm.jpg",
             "title" : "Vanilla Lip Balm",
-            "price" : 240
+            "oldPrice" : 399 ,
+            "newPrice" : 240
+
+        },
+
+        {
+            "id" : 24,
+            "image" : "/assets/images/strawberry lip balm.jpg",
+            "title" : "Strawberry Lip Balm",
+            "oldPrice" : 399 ,
+            "newPrice" : 250 
+    
         }
 ]

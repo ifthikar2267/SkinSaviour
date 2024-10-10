@@ -12,7 +12,7 @@ const ProductDetail = () => {
     return <h2>Product not found</h2>;
   }
 
-  const { title, image, price, highlights } = product;
+  const { title, image, oldPrice, newPrice , highlights } = product;
 
   const handleAddToCart = () => {
     //addToCart({ id: product.id, title: product.title, price: product.price });
@@ -31,9 +31,10 @@ const ProductDetail = () => {
         </Col>
         <Col xs={12} md={6} lg={8}>
           <h1>{title}</h1>
-          <h2>Rs. {price}</h2>
+          <span class="text-muted text-decoration-line-through fs-5 me-2">Rs.{oldPrice}</span>
+          <span class="text-black fw-bold fs-4">Rs.{newPrice}</span>
           <Card.Text>
-            <strong>Highlights:</strong>
+            <strong>Highlights:</strong> 
             {highlights ? (
               <ul>
                 {highlights.split(';').map((item, index) => (

@@ -6,7 +6,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import products from '../Data/products.json';
 import { Link } from 'react-router-dom';
 
-export const Product = ({ id, image, title, price }) => {
+export const Product = ({ id, image, title, oldPrice , newPrice }) => {
 
 
   const handleAddToCart = () => {
@@ -27,8 +27,9 @@ export const Product = ({ id, image, title, price }) => {
           />
         </div>
         <Card.Body className="text-center d-flex flex-column">
-          <Card.Title className="fs-4" >{title}</Card.Title>
-          <Card.Text className="fs-3 text-black-50">Rs.{price}</Card.Text>
+          <Card.Title className="fs-4 text-black" >{title}</Card.Title>
+          <span class="text-muted text-decoration-line-through fs-5 me-2">Rs.{oldPrice}</span>
+          <span class="text-dark gray fw-bold fs-4">Rs.{newPrice}</span>
         </Card.Body>
       </Link>
       <Button variant="warning" onClick={handleAddToCart} >
