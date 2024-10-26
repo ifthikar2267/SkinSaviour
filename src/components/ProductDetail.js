@@ -12,7 +12,7 @@ const ProductDetail = () => {
     return <h2>Product not found</h2>;
   }
 
-  const { title, image, oldPrice, newPrice , highlights } = product;
+  const { title, image, oldPrice, newPrice , highlights , benefits } = product;
 
   const handleAddToCart = () => {
     //addToCart({ id: product.id, title: product.title, price: product.price });
@@ -44,7 +44,19 @@ const ProductDetail = () => {
             ) : (
               <p>No highlights available for this product.</p>
             )}
-          </Card.Text>
+            <strong>Benefits:</strong>
+            {benefits ? (
+              <ul>
+                {benefits.split(';').map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            ) : (
+              <p>No benefits available for this product.</p>
+            )}
+
+
+          </Card.Text>  
           <Row className="mt-3">
             <Col xs={12} md={6} className="mb-2">
               <Button block variant="primary">

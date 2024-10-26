@@ -6,13 +6,10 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import products from '../Data/products.json';
 import { Link } from 'react-router-dom';
 
-export const Product = ({ id, image, title, oldPrice , newPrice }) => {
-
+export const Product = ({ id, image, title, oldPrice, newPrice }) => {
 
   const handleAddToCart = () => {
-    // addToCart({ id, title, price }){
-
-    // }
+   // addToCart({ id, title, price: newPrice, image });
   };
 
   return (

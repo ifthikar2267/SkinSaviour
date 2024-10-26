@@ -5,7 +5,8 @@
         "title" : "Aloevera Gel",
         "oldPrice" : 360,
         "newPrice" : 180,
-        "highlights" : "Part A - Carbo mur 940 , Glycerin , Distilled water , Aloevera juice ; Part B - Propylene Glycol , Phenoxy ethanol"
+        "highlights" : "Homemade aloe vera gel is free from preservatives and synthetic additives, making it a pure and safe option.",
+        "benefits" : "Hydration and Moisturization ; Soothing Sunburns and Skin Irritations ; Anti-Aging and Skin Elasticity ; Acne Treatment and Scar Reduction"
     },
 
     {
@@ -14,7 +15,8 @@
         "title" : "Anti Acne Gel",
         "oldPrice" : 360,
         "newPrice" : 230,
-        "highlights" : "Part A - Carbo mur 940 , Glycerin , Distilled water ; Part B - Propylene Glycol , Phenoxy ethanol "
+        "highlights" : "Homemade anti-acne gels allow you to control the ingredients, avoiding harsh chemicals often found in commercial products.  ",
+        "benefits" : "Reduces Acne and Breakouts ; Soothes Inflammation and Redness ; Balances Oil Production ; Reduces Acne Scarring and Dark Spots ; Promotes Skin Healing ; Prevents Clogging and Minimizes Pores"
 
     },
 
@@ -24,7 +26,8 @@
         "title" : "Basil Lemon Soap",
         "oldPrice" : 199 , 
         "newPrice" : 120 , 
-        "highlights" : "Transparent / Goatmilk Base , Lemon Powder , Bentonite Clay , Essential Oils (As per skin type)"
+        "highlights" : "Homemade basil lemon soap gel is a refreshing, antibacterial cleanser that combines the skin-purifying properties of basil with the brightening and energizing effects of lemon. ",
+        "benefits" : "Deep Cleansing and Acne Prevention ; Natural Brightening and Skin Toning ; Oil Control and Refreshing Feel ; Detoxification and Skin Purification ; Natural Aroma and Mood Boost ; Gentle Exfoliation for Radiant Skin"
 
     },
 
@@ -34,7 +37,8 @@
         "title" : "Body Wash",
         "oldPrice" : 399,
         "newPrice" : 180,
-        "highlights" : ""
+        "highlights" : "Homemade body wash is a natural, customizable alternative to commercial cleansers, offering numerous skin benefits without the harsh chemicals or artificial fragrances.",
+        "benefits" : "Gentle Cleansing without Harsh Chemicals ; Moisturizes and Hydrates the Skin ; Customizable for Different Skin Needs ; Rich in Antioxidants and Nutrients ; Natural Fragrance and Aromatherapy Benefits ; Environmentally Friendly"
 
     },
 
@@ -44,8 +48,8 @@
         "title" : "Charcoal Soap",
         "oldPrice" : 199,
         "newPrice" : 150,
-        "highlights" : "Transparent / Goatmilk Base , Charcoal Powder , Bentonite Clay"
-
+        "highlights" : "Homemade charcoal soap is an excellent natural cleanser with powerful detoxifying and skin-purifying benefits. Activated charcoal is the star ingredient, known for its ability to draw out impurities and toxins, making it a popular choice for oily, acne-prone, and combination skin. ",
+        "benefits" : "Deep Cleansing and Detoxification ; Balances Excess Oil and Reduces Shine ; Acne Control and Pore Minimization ; Gentle Exfoliation for Smoother Skin ; Improves Skin Tone and Reduces Blemishes ; Odor Control for Body Care"
     },
 
     {
@@ -54,7 +58,8 @@
         "title" : "Chocolate Lip Scrub",
         "oldPrice" : 399,
         "newPrice" : 200,
-        "highlights" : "Almond oil , Coco Butter , Coconut oil , Beeswax , Vit E oil "
+        "highlights" : "A homemade chocolate lip scrub is a delightful and effective way to keep lips smooth, soft, and hydrated. Cocoa contains antioxidants that nourish the lips, while sugar and other natural ingredients help exfoliate and lock in moisture.",
+        "benefits" : "Boosts Circulation for Natural Color ; Delicious Chocolate Scent and Flavor ; Brightens and Improves Lip Texture ; Hydrates and Softens Lips ; Exfoliates Dead Skin Cells"
 
     },
 
@@ -64,7 +69,8 @@
         "title" : "Day Cream",
         "oldPrice" : 599 ,
         "newPrice" : 280 ,
-        "highlights" : ""
+        "highlights" : "Homemade day cream is a natural, nourishing alternative to commercial creams, allowing you to hydrate, protect, and brighten your skin with pure ingredients. This type of cream is especially beneficial because it avoids artificial chemicals, making it gentler and more customizable for individual skin needs.",
+        "benefits" : "Customizable for All Skin Types ; Calms and Soothes Skin ; Brightens and Evens Skin Tone ; Anti-Aging and Skin Repair ; Provides a Protective Barrier ; Moisturizes and Hydrates the Skin"
 
     },
 
@@ -74,7 +80,8 @@
         "title" : "Herbal Hair Oil",
         "oldPrice" : 399,
         "newPrice" : 180,
-        "highlights" : ""
+        "highlights" : "Homemade herbal hair oil is a potent, natural way to nourish the scalp, promote healthy hair growth, and address various hair concerns like dandruff, hair fall, and dryness. Crafted with herbs, oils, and essential nutrients, it delivers targeted benefits to improve hair health over time.",
+        "benefits" : "Improves Scalp Health ; Delays Premature Greying ; Adds Shine and Softness ; Prevents Dandruff and Soothes Itchy Scalp ; Strengthens and Reduces Hair Fall ; Promotes Hair Growth"
 
     },
 
@@ -84,7 +91,8 @@
         "title" : "Lip Tint",
         "oldPrice" : 399,
         "newPrice" : 180,
-        "highlights" : "Fractionated coconut oil , IPM , Calcium Carbonate , FDA color , Vit E oil "
+        "highlights" : "A homemade lip tint is a natural and simple way to add a touch of color to your lips while nourishing them with beneficial ingredients. Unlike commercial lip tints, a DIY version is free from artificial dyes, preservatives, and chemicals, making it a safer and more personalized beauty product.",
+        "benefits" : "Easy to Customize ; Multi-Purpose ; Chemical-Free and Gentle ; Nourishes and Hydrates the Lips ; Provides a Natural, Healthy Tint"
 
     },
 
@@ -94,7 +102,8 @@
         "title" : "Oats And Honey Soap",
         "oldPrice" : 199,
         "newPrice" : 80,
-        "highlights" : "Transparent / Goatmilk Base , Oats Powder , Honey , Bentonite Clay "
+        "highlights" : "Homemade oats and honey soap is a gentle, moisturizing, and soothing option for skin care. Combining the natural exfoliating properties of oats with the hydrating and antibacterial benefits of honey, this soap is ideal for people with sensitive, dry, or irritated skin. ",
+        "benefits" : "Natural and Chemical-Free ; Antioxidant-Rich for Healthier Skin ; Balances Oil Production ; Soothes and Calms Irritated Skin ; Gently Exfoliates Dead Skin Cells ; Moisturizes and Hydrates the Skin"
 
     },
 
@@ -104,7 +113,8 @@
         "title" : "Pure Coconut Oil Soap",
         "oldPrice" : 199,
         "newPrice" : 100,
-        "highlights" : "Transparent Soap Base , Coconut juice , Essential oils "
+        "highlights" : "Homemade pure coconut oil soap is a deeply cleansing and moisturizing option with a simple ingredient profile that makes it both effective and gentle. Coconut oil is rich in fatty acids, which provide excellent cleansing properties while hydrating and protecting the skin. ",
+        "benefits" : "Simple and Natural ; Suitable for Sensitive Skin ; Antibacterial and Antifungal ; Rich in Antioxidants ; Moisturizes and Softens ; Deeply Cleanses the Skin"
 
     },
 
@@ -114,7 +124,8 @@
         "title" : "Red Wine Gel",
         "oldPrice" : 399,
         "newPrice" : 250,
-        "highlights" : "Part A - Carbo mur 940 , Glycerin , Distilled water , Redwine ; Part B - Propylene Glycol , Phenoxy ethanol "
+        "highlights" : "Homemade red wine gel is a luxurious skincare product that harnesses the antioxidant-rich properties of red wine to promote glowing, youthful skin. This gel is especially valued for its potential anti-aging effects, as red wine contains resveratrol and other antioxidants that can help protect the skin from environmental damage, improve elasticity, and enhance its natural glow.",
+        "benefits" : "Improves Skin Tone and Reduces Dark Spots ; Hydrates and Soothes ; Gently Exfoliates and Brightens ; Anti-Aging Properties ; Promotes a Natural Glow ; Rich in Antioxidants"
 
     },
 
@@ -124,7 +135,8 @@
         "title" : "Saffron Gel",
         "oldPrice" : 399,
         "newPrice" : 170,
-        "highlights" : "Carbomur 940 / Carbopol , Glycerine , Saffron infued water "
+        "highlights" : "Homemade saffron gel is a luxurious skincare treatment known for its brightening, anti-aging, and soothing properties. Saffron, one of the most prized spices, is rich in antioxidants and vitamins that promote an even skin tone, improve radiance, and help reduce signs of aging. This gel is a popular choice for those seeking a natural way to enhance skin luminosity and health without harsh chemicals. ",
+        "benefits" : "Promotes a Healthy Complexion ; Hydrates and Softens the Skin ; Soothes and Reduces Inflammation ; Anti-Aging Properties ; Fades Dark Spots and Pigmentation ; Enhances Skin Radiance"
 
     },
 
@@ -134,7 +146,8 @@
         "title" : "Glutathione Serum",
         "oldPrice" : 899,
         "newPrice" : 399,
-        "highlights" : "Water , Glutathione powder , Vitamin C , Proplyn glycol , Poly 20 , Color , Perfume "
+        "highlights" : "Homemade glutathione serum is a powerful skincare product known for its brightening and anti-aging properties. Glutathione is a potent antioxidant naturally produced in the body, playing a critical role in neutralizing free radicals, detoxifying cells, and promoting overall skin health. Incorporating a glutathione serum into your skincare routine can help achieve a more even skin tone, reduce dark spots, and improve skin elasticity.",
+        "benefits" : "Soothes Inflammation ; Detoxifies the Skin ; Reduces Signs of Aging ; Improves Skin Texture ; Powerful Antioxidant Protection ; Brightens the Skin"
 
     },
 
@@ -144,7 +157,8 @@
         "title" : "GlutathioneBrightening Serum",
         "oldPrice" : 1299,
         "newPrice" : 599,
-        "highlights" : "Water , Glutathione powder , Vitamin C , Proplyn glycol , Poly 20 , Color , Perfume ; Almond oil , Jojoba oil , Lemon essential oil"
+        "highlights" : "Homemade glutathione brightening serum is a potent skincare product designed to enhance the skin's radiance and promote an even skin tone. Glutathione is a powerful antioxidant that plays a crucial role in protecting the skin from damage, reducing dark spots, and promoting a healthier, more luminous complexion. This serum can be particularly beneficial for those seeking to lighten hyperpigmentation, improve skin texture, and maintain youthful-looking skin.",
+        "benefits" : "Soothes and Calms the Skin ; Anti-Aging Benefits ; Improves Skin Texture ; Reduces Hyperpigmentation ; Powerful Antioxidant Protection ; Brightens the Complexion "
 
     },
 
@@ -154,7 +168,8 @@
         "title" : "Shea Butter Strawberry Lip Balm",
         "oldPrice" : 399 ,
         "newPrice" : 280 ,
-        "highlights" : "Almond oil , Coco Butter , Coconut oil , Beeswax , Vit E oil , shea butter"
+        "highlights" : "Homemade shea butter strawberry lip balm is a nourishing and soothing product designed to keep your lips soft, hydrated, and protected. This lip balm combines the rich moisturizing properties of shea butter with the delightful scent and flavor of strawberries, making it a delightful addition to your skincare routine. It's perfect for maintaining lip health, especially in harsh weather conditions.",
+        "benefits" : "Customizable ; Delicious Flavor and Scent ; Antioxidant Properties ; Soothes Chapped Lips ; Natural Protection ; Softens and Smoothens Lips ; Deeply Moisturizes"
 
     },
 
@@ -164,7 +179,8 @@
         "title" : "Skin Brightening Cream",
         "oldPrice" : 399 , 
         "newPrice" : 280 , 
-        "highlights" : ""
+        "highlights" : "Homemade skin brightening cream is a natural skincare product designed to enhance the complexion, improve skin tone, and reduce the appearance of dark spots and blemishes. This cream typically combines various nourishing ingredients that work together to promote a more radiant, even skin tone while also providing hydration and protection.",
+        "benefits" : "Natural and Customizable ; Soothes and Calms the Skin ; Reduces Signs of Aging ; Antioxidant Protection ; Antioxidant Protection ; Hydrates the Skin ; Enhances Radiance ; Evens Skin Tone "
 
     },
 
@@ -174,7 +190,8 @@
         "title" : "Sunscreen Lotion",
         "oldPrice" : 599,
         "newPrice" : 260,
-        "highlights" : ""
+        "highlights" : "Homemade sunscreen lotion is a crucial skincare product designed to protect the skin from the harmful effects of ultraviolet (UV) radiation from the sun. Unlike commercial sunscreens, homemade formulations can be tailored to your skin type and preferences, often using natural ingredients that offer additional benefits.",
+        "benefits" : "Eco-Friendly Option ; Customizable ; Gentle on Skin ; Hydration and Nourishment ; Reduces Risk of Skin Cancer ; Prevents Premature Aging ; Protection from UV Radiation "
     },
 
     {
@@ -183,7 +200,8 @@
         "title" : "Vanilla Lip Scrub",
         "oldPrice" : 399,
         "newPrice" : 200,
-        "highlights" : "Almond oil , Coco Butter , Coconut oil , Beeswax , Vit E oil"
+        "highlights" : "Homemade vanilla lip scrub is a delightful and effective skincare product designed to exfoliate and nourish the lips. It combines natural ingredients that help remove dead skin cells, hydrate, and improve the overall appearance of your lips. The pleasant scent of vanilla adds a sensory appeal, making the lip care routine enjoyable.",
+        "benefits" : "Natural and Chemical-Free ; Customizable Recipe ; Prepares Lips for Lip Products ; Stimulates Circulation ; Enhances Lip Color ; Improves Lip Texture ; Hydrates and Nourishes ; Exfoliates Dead Skin"
 
     },
 
@@ -193,7 +211,8 @@
         "title" : "Wax Powder",
         "oldPrice" : 599,
         "newPrice" : 300,
-        "highlights" : "Rice flour , Multhani matti , Barium sulphide , Fragrance"
+        "highlights" : "Homemade wax powder is a versatile beauty and skincare product used primarily for hair removal, but it can also have applications in various cosmetic formulations. It offers a natural alternative to commercial waxing products, allowing users to customize the ingredients and adapt them to their preferences.",
+        "benefits" : "Reduces Hair Growth Over Time ; Less Messy than Traditional Waxing ; Exfoliation ; Cost-Effective ; Customizable Formulation ; Natural Ingredients ; Effective Hair Removal"
 
     },
 
@@ -203,7 +222,8 @@
         "title" : "Grape Fruit Shampoo",
         "oldPrice" : 450,
         "newPrice" : 150,
-        "highlights" : "Grape Fruit juice , Distilled water , Cmc (carbo methyl cellulose) , EDTA , SCI Powder booster "
+        "highlights" : "Homemade grapefruit shampoo is a natural and refreshing hair care product that utilizes the properties of grapefruit to cleanse, nourish, and invigorate the hair and scalp. This DIY shampoo can be particularly beneficial for those looking for a gentle yet effective cleansing solution that promotes healthy hair.",
+        "benefits" : "Chemical-Free Formula ; Natural Fragrance ; Stimulates Hair Growth ; Promotes Shine and Softness ; Balances Oil Production ; Cleanses the Scalp ; Rich in Vitamins"
     },
 
     {
@@ -212,7 +232,8 @@
         "title" : "Strawberry Shampoo",
         "oldPrice" : 450,
         "newPrice" : 150,
-        "highlights" : "Strawberry Fruit juice , Distilled water , Cmc (carbo methyl cellulose) , EDTA , SCI Powder booster  "
+        "highlights" : "Homemade strawberry shampoo is a delightful and nourishing hair care product that utilizes the natural properties of strawberries to cleanse and revitalize the hair and scalp. Strawberries are not only delicious but also packed with beneficial nutrients that can enhance the health and appearance of your hair. ",
+        "benefits" : "Pleasant Fragrance ; Gentle on Hair ; Balances Scalp pH ; Adds Shine and Softness ; Promotes Hair Growth ; Natural Cleansing Properties ; Rich in Vitamins and Antioxidants"
     },
 
     {
@@ -221,17 +242,19 @@
         "title" : "Vanilla Lip Balm",
         "oldPrice" : 399 ,
         "newPrice" : 240 ,
-        "highlights" : "Almond oil , Coco Butter , Coconut oil , Beeswax , Vit E oil , FDA color , Vanilla Powder "
+        "highlights" : "Homemade vanilla lip balm is a soothing and nourishing product designed to hydrate and protect your lips. Made with natural ingredients, it can be customized to suit your preferences while providing essential moisture and nourishment to maintain soft, healthy lips. ",
+        "benefits" : "Eco-Friendly ; Antioxidant Properties ; Pleasant Scent and Flavor ; Soothes Chapped Lips ; Natural Ingredients "
 
     },
 
     {
         "id" : 24,
-        "image" : "/assets/images/strawberry lip balm.jpg",
+        "image" : "/assets/images/Strawberry lip balm.jpg",
         "title" : "Strawberry Lip Balm",
         "oldPrice" : 399 ,
         "newPrice" : 250 ,
-        "highlights" : "Almond oil , Coco Butter , Coconut oil , Beeswax , Vit E oil "
+        "highlights" : "Homemade strawberry lip balm is a delightful and nourishing product designed to hydrate and protect your lips while offering a natural fruity flavor. Packed with the benefits of strawberries and other natural ingredients, this DIY lip balm can be a great addition to your skincare routine. ",
+        "benefits" : "Eco-Friendly ; Natural Ingredients ; Antioxidant Properties ; Pleasant Flavor and Aroma ; Soothes Chapped Lips ; Rich in Nutrients ; Moisturizes and Hydrates"
 
     }
 ]
