@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
+import { CartContext } from '../contexts/CartContext.js';
 import products from '../Data/ingredients.json';
 import { Card, Button, Container, Row, Col } from 'react-bootstrap';
 
 const ProductDetail = () => {
-  // const { addToCart } = useContext(CartContext);
+  const { addToCart } = useContext(CartContext); // Access addToCart
   const { id } = useParams();
   const product = products.find((product) => product.id === parseInt(id));
 
@@ -12,29 +13,30 @@ const ProductDetail = () => {
     return <h2>Product not found</h2>;
   }
 
-  const { title, image, oldPrice, newPrice , highlights , benefits } = product;
+  const { title, image, oldPrice, newPrice, highlights, benefits } = product;
 
   const handleAddToCart = () => {
-    //addToCart({ id: product.id, title: product.title, price: product.price });
+    addToCart({ id: product.id, title: product.title, price: newPrice, image });
   };
 
-
   return (
-    <Container className='ProductDetail-container my-4'>
+    <Container className="ProductDetail-container my-4">
       <Row className="justify-content-center">
         <Col xs={12} md={6} lg={4} className="text-center">
           <img
-            className='ProductDetail-img img-fluid' 
+            className="ProductDetail-img img-fluid"
             src={image}
             alt={title}
           />
         </Col>
         <Col xs={12} md={6} lg={8}>
           <h1>{title}</h1>
-          <span class="text-muted text-decoration-line-through fs-5 me-2">Rs.{oldPrice}</span>
-          <span class="text-black fw-bold fs-4">Rs.{newPrice}</span>
+          <span className="text-muted text-decoration-line-through fs-5 me-2">
+            Rs.{oldPrice}
+          </span>
+          <span className="text-black fw-bold fs-4">Rs.{newPrice}</span>
           <Card.Text>
-            <strong>Highlights:</strong> 
+            <strong>Highlights:</strong>
             {highlights ? (
               <ul>
                 {highlights.split(';').map((item, index) => (
@@ -54,17 +56,17 @@ const ProductDetail = () => {
             ) : (
               <p>No benefits available for this product.</p>
             )}
-
-
-          </Card.Text>  
+          </Card.Text>
           <Row className="mt-3">
             <Col xs={12} md={6} className="mb-2">
-              <Button block variant="primary">
+              {/* Replace 'block' with 'w-100' */}
+              <Button className="w-100" variant="primary">
                 BUY NOW
-              </Button> 
+              </Button>
             </Col>
             <Col xs={12} md={6}>
-              <Button block variant="warning" onClick={handleAddToCart}>
+              {/* Replace 'block' with 'w-100' */}
+              <Button className="w-100" variant="warning" onClick={handleAddToCart}>
                 Add to cart
               </Button>
             </Col>

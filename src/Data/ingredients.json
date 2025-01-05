@@ -169,7 +169,7 @@
         "oldPrice" : 399 ,
         "newPrice" : 280 ,
         "highlights" : "Homemade shea butter strawberry lip balm is a nourishing and soothing product designed to keep your lips soft, hydrated, and protected. This lip balm combines the rich moisturizing properties of shea butter with the delightful scent and flavor of strawberries, making it a delightful addition to your skincare routine. It's perfect for maintaining lip health, especially in harsh weather conditions.",
-        "benefits" : "Customizable ; Delicious Flavor and Scent ; Antioxidant Properties ; Soothes Chapped Lips ; Natural Protection ; Softens and Smoothens Lips ; Deeply Moisturizes"
+        "benefits" : "Delicious Flavor and Scent ; Antioxidant Properties ; Soothes Chapped Lips ; Natural Protection ; Softens and Smoothens Lips ; Deeply Moisturizes"
 
     },
 
@@ -191,7 +191,7 @@
         "oldPrice" : 599,
         "newPrice" : 260,
         "highlights" : "Homemade sunscreen lotion is a crucial skincare product designed to protect the skin from the harmful effects of ultraviolet (UV) radiation from the sun. Unlike commercial sunscreens, homemade formulations can be tailored to your skin type and preferences, often using natural ingredients that offer additional benefits.",
-        "benefits" : "Eco-Friendly Option ; Customizable ; Gentle on Skin ; Hydration and Nourishment ; Reduces Risk of Skin Cancer ; Prevents Premature Aging ; Protection from UV Radiation "
+        "benefits" : "Customizable ; Gentle on Skin ; Hydration and Nourishment ; Reduces Risk of Skin Cancer ; Prevents Premature Aging ; Protection from UV Radiation "
     },
 
     {
@@ -243,7 +243,7 @@
         "oldPrice" : 399 ,
         "newPrice" : 240 ,
         "highlights" : "Homemade vanilla lip balm is a soothing and nourishing product designed to hydrate and protect your lips. Made with natural ingredients, it can be customized to suit your preferences while providing essential moisture and nourishment to maintain soft, healthy lips. ",
-        "benefits" : "Eco-Friendly ; Antioxidant Properties ; Pleasant Scent and Flavor ; Soothes Chapped Lips ; Natural Ingredients "
+        "benefits" : "Antioxidant Properties ; Pleasant Scent and Flavor ; Soothes Chapped Lips ; Natural Ingredients "
 
     },
 
@@ -254,7 +254,7 @@
         "oldPrice" : 399 ,
         "newPrice" : 250 ,
         "highlights" : "Homemade strawberry lip balm is a delightful and nourishing product designed to hydrate and protect your lips while offering a natural fruity flavor. Packed with the benefits of strawberries and other natural ingredients, this DIY lip balm can be a great addition to your skincare routine. ",
-        "benefits" : "Eco-Friendly ; Natural Ingredients ; Antioxidant Properties ; Pleasant Flavor and Aroma ; Soothes Chapped Lips ; Rich in Nutrients ; Moisturizes and Hydrates"
+        "benefits" : "Natural Ingredients ; Antioxidant Properties ; Pleasant Flavor and Aroma ; Soothes Chapped Lips ; Rich in Nutrients ; Moisturizes and Hydrates"
 
     }
 ]

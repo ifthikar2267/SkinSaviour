@@ -1,15 +1,20 @@
-import React from 'react';
+import React , { useContext } from 'react';
 import { useState } from 'react';
 import { Container, Row, Col, Card, Button, Form } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import products from '../Data/products.json';
 import { Link } from 'react-router-dom';
+import { CartContext } from '../contexts/CartContext.js';
+
+
 
 export const Product = ({ id, image, title, oldPrice, newPrice }) => {
+  const { addToCart } = useContext(CartContext);
 
   const handleAddToCart = () => {
-   // addToCart({ id, title, price: newPrice, image });
+    // Pass all necessary product details
+    addToCart({ id, title, image, price: newPrice });
   };
 
   return (
@@ -24,12 +29,14 @@ export const Product = ({ id, image, title, oldPrice, newPrice }) => {
           />
         </div>
         <Card.Body className="text-center d-flex flex-column">
-          <Card.Title className="fs-4 text-black" >{title}</Card.Title>
-          <span class="text-muted text-decoration-line-through fs-5 me-2">Rs.{oldPrice}</span>
-          <span class="text-dark gray fw-bold fs-4">Rs.{newPrice}</span>
+          <Card.Title className="fs-4 text-black">{title}</Card.Title>
+          <span className="text-muted text-decoration-line-through fs-5 me-2">
+            Rs.{oldPrice}
+          </span>
+          <span className="text-dark gray fw-bold fs-4">Rs.{newPrice}</span>
         </Card.Body>
       </Link>
-      <Button variant="warning" onClick={handleAddToCart} >
+      <Button variant="warning" onClick={handleAddToCart}>
         Add to cart
       </Button>
     </Card>
@@ -64,8 +71,8 @@ const Products = () => {
             }
             return null;
           })
-          .map((product, index) => (
-            <Col key={index} md={4}>
+          .map((product) => (
+            <Col key={product.id} md={4}>
               <Product {...product} />
             </Col>
           ))}
@@ -74,4 +81,4 @@ const Products = () => {
   );
 };
 
-export default Products ;
+export default Products;
