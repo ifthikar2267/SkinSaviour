@@ -8,35 +8,52 @@ export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
   const [alertMessage, setAlertMessage] = useState('');
 
+  // Add product to the cart
   const addToCart = (product) => {
+    if (!product || !product.id) {
+      console.error('Invalid product data passed to addToCart');
+      return;
+    }
+
     const existingProduct = cartItems.find((item) => item.id === product.id);
 
     if (existingProduct) {
-      // If product already exists, increment its quantity
-      setCartItems(
-        cartItems.map((item) =>
+      // Update quantity if the product already exists
+      setCartItems((prevItems) =>
+        prevItems.map((item) =>
           item.id === product.id
             ? { ...item, quantity: item.quantity + 1 }
             : item
         )
       );
     } else {
-      // Add a new product with quantity 1
-      setCartItems([...cartItems, { ...product, quantity: 1 }]);
+      // Add new product to cart
+      setCartItems((prevItems) => [...prevItems, { ...product, quantity: 1 }]);
     }
 
-    // Display alert
+    // Display alert message
     setAlertMessage(`${product.title} successfully added to cart!`);
-    setTimeout(() => setAlertMessage(''), 3000);
+    setTimeout(() => setAlertMessage(''), 3000); // Clear alert after 3 seconds
   };
 
+  // Remove product from the cart
   const removeFromCart = (id) => {
-    setCartItems(cartItems.filter((item) => item.id !== id));
+    if (!id) {
+      console.error('Invalid product ID passed to removeFromCart');
+      return;
+    }
+
+    setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
   };
 
   return (
     <CartContext.Provider
-      value={{ cartItems, addToCart, removeFromCart, alertMessage }}
+      value={{
+        cartItems,
+        addToCart,
+        removeFromCart,
+        alertMessage,
+      }}
     >
       {children}
     </CartContext.Provider>

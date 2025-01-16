@@ -4,7 +4,8 @@
             "image" : "/assets/images/Aloevera Gel.jpg",
             "title" : "Aloevera Gel",
             "oldPrice" : 360,
-            "newPrice" : 180
+            "newPrice" : 180,
+            "stock" : 10
         },
 
         {
@@ -12,7 +13,8 @@
             "image" : "/assets/images/Anti Acne Gel.jpg",
             "title" : "Anti Acne Gel",
             "oldPrice" : 360,
-            "newPrice" : 230
+            "newPrice" : 230,
+            "stock" : 10
 
         },
 
@@ -21,7 +23,8 @@
             "image" : "/assets/images/Basil lemon soap.jpg" ,
             "title" : "Basil Lemon Soap",
             "oldPrice" : 199 , 
-            "newPrice" : 120 
+            "newPrice" : 120 ,
+            "stock" : 0
 
         },
 
@@ -31,7 +34,8 @@
             "image" : "/assets/images/Body wash.jpg",
             "title" : "Body Wash",
             "oldPrice" : 399,
-            "newPrice" : 180
+            "newPrice" : 180,
+            "stock" : 0
 
         },
 
@@ -40,7 +44,8 @@
             "image" : "/assets/images/Charcoal soap.jpg",
             "title" : "Charcoal Soap",
             "oldPrice" : 199,
-            "newPrice" : 150
+            "newPrice" : 150,
+            "stock" : 5
 
         },
 
@@ -50,7 +55,8 @@
             "image" : "/assets/images/Chocolate Lip Scrub.jpg" ,
             "title" : "Chocolate Lip Scrub",
             "oldPrice" : 399,
-            "newPrice" : 200
+            "newPrice" : 200,
+            "stock" : 5
         },
 
         {
@@ -58,7 +64,8 @@
             "image" : "/assets/images/Day cream.jpg",
             "title" : "Day Cream",
             "oldPrice" : 599 ,
-            "newPrice" : 280
+            "newPrice" : 280,
+            "stock" : 5
         },
 
         {
@@ -66,7 +73,8 @@
             "image" : "/assets/images/Hair oil.jpg",
             "title" : "Herbal Hair Oil",
             "oldPrice" : 399,
-            "newPrice" : 180
+            "newPrice" : 180,
+            "stock" : 5
 
         },
 
@@ -75,7 +83,8 @@
         "image" : "/assets/images/Lip tint.jpg",
         "title" : "Lip Tint",
         "oldPrice" : 399,
-        "newPrice" : 180
+        "newPrice" : 180,
+        "stock" : 5
 
         },
 
@@ -84,7 +93,8 @@
             "image" : "/assets/images/Oats and honey soap.jpg",
             "title" : "Oats And Honey Soap",
             "oldPrice" : 199,
-            "newPrice" : 80
+            "newPrice" : 80,
+            "stock" : 5
 
         },
 
@@ -93,7 +103,8 @@
             "image" : "/assets/images/Pure coconut oil soap.jpg",
             "title" : "Pure Coconut Oil Soap",
             "oldPrice" : 199,
-            "newPrice" : 100
+            "newPrice" : 100,
+            "stock" : 5
 
         },
 
@@ -102,7 +113,8 @@
             "image" : "/assets/images/Red wine gel.jpg",
             "title" : "Red Wine Gel",
             "oldPrice" : 399,
-            "newPrice" : 250
+            "newPrice" : 250,
+            "stock" : 5
 
         },
 
@@ -111,7 +123,8 @@
             "image" : "/assets/images/Saffron Gel.jpg" ,
             "title" : "Saffron Gel",
             "oldPrice" : 399,
-            "newPrice" : 170
+            "newPrice" : 170,
+            "stock" : 5
 
         },
 
@@ -120,7 +133,8 @@
             "image" : "/assets/images/Glutathione Serum.jpg",
             "title" : "Glutathione Serum",
             "oldPrice" : 899,
-            "newPrice" : 399
+            "newPrice" : 399,
+            "stock" : 5
 
         },
 
@@ -129,7 +143,8 @@
             "image" : "/assets/images/GlutathioneBrightening Serum.jpg",
             "title" : "GlutathioneBrightening Serum",
             "oldPrice" : 1299,
-            "newPrice" : 599
+            "newPrice" : 599,
+            "stock" : 5
 
         },
 
@@ -138,7 +153,8 @@
             "image" : "/assets/images/Shea butter strawberry lip balm.jpg",
             "title" : "Shea Butter Strawberry Lip Balm",
             "oldPrice" : 399 ,
-            "newPrice" : 280
+            "newPrice" : 280,
+            "stock" : 5
 
         },
 
@@ -147,7 +163,8 @@
             "image" : "/assets/images/Skin brightening cream.jpg",
             "title" : "Skin Brightening Cream",
             "oldPrice" : 399 , 
-            "newPrice" : 280
+            "newPrice" : 280,
+            "stock" : 5
 
         },
 
@@ -156,7 +173,8 @@
             "image" : "/assets/images/SunScreen lotion.jpg",
             "title" : "Sunscreen Lotion",
             "oldPrice" : 599,
-            "newPrice" : 260
+            "newPrice" : 260,
+            "stock" : 5
 
         },
 
@@ -165,7 +183,8 @@
             "image" : "/assets/images/Vanilla Lip Scrub.jpg",
             "title" : "Vanilla Lip Scrub",
             "oldPrice" : 399,
-            "newPrice" : 200
+            "newPrice" : 200,
+            "stock" : 5
 
         },
 
@@ -174,7 +193,8 @@
             "image" : "/assets/images/Wax powder.jpg" ,
             "title" : "Wax Powder",
             "oldPrice" : 599,
-            "newPrice" : 300
+            "newPrice" : 300,
+            "stock" : 5
 
         },
 
@@ -183,7 +203,8 @@
             "image" : "/assets/images/Grape Fruit Shampoo.jpeg",
             "title" : "Grape Fruit Shampoo",
             "oldPrice" : 450,
-            "newPrice" : 150
+            "newPrice" : 150,
+            "stock" : 5
 
         },
 
@@ -192,7 +213,8 @@
             "image" : "/assets/images/Strawberry Shampoo.jpeg",
             "title" : "Strawberry Shampoo",
             "oldPrice" : 450,
-            "newPrice" : 150
+            "newPrice" : 150,
+            "stock" : 5
 
         },
 
@@ -201,7 +223,8 @@
             "image" : "/assets/images/vanilla lip balm.jpg",
             "title" : "Vanilla Lip Balm",
             "oldPrice" : 399 ,
-            "newPrice" : 240
+            "newPrice" : 240,
+            "stock" : 5
 
         },
 
@@ -210,7 +233,8 @@
             "image" : "/assets/images/Strawberry lip balm.jpg",
             "title" : "Strawberry Lip Balm",
             "oldPrice" : 399 ,
-            "newPrice" : 250 
+            "newPrice" : 250,
+            "stock" : 5 
     
         }
 ]

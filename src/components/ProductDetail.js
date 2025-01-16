@@ -13,7 +13,7 @@ const ProductDetail = () => {
     return <h2>Product not found</h2>;
   }
 
-  const { title, image, oldPrice, newPrice, highlights, benefits } = product;
+  const { title, image, oldPrice, newPrice, highlights, benefits, stock} = product;
 
   const handleAddToCart = () => {
     addToCart({ id: product.id, title: product.title, price: newPrice, image });
@@ -22,9 +22,14 @@ const ProductDetail = () => {
   return (
     <Container className="ProductDetail-container my-4">
       <Row className="justify-content-center">
-        <Col xs={12} md={6} lg={4} className="text-center">
+        <Col xs={12} md={6} lg={4} className="text-center ">
+        {stock === 0 && (
+        <div>
+        <span class="badge bg-danger text-uppercase">Out of Stock</span>
+        </div>
+      )}
           <img
-            className="ProductDetail-img img-fluid"
+            className="ProductDetail-img img-fluid "
             src={image}
             alt={title}
           />
@@ -60,13 +65,13 @@ const ProductDetail = () => {
           <Row className="mt-3">
             <Col xs={12} md={6} className="mb-2">
               {/* Replace 'block' with 'w-100' */}
-              <Button className="w-100" variant="primary">
+              <Button className="w-100" variant="primary"  disabled={stock === 0}>
                 BUY NOW
               </Button>
             </Col>
             <Col xs={12} md={6}>
               {/* Replace 'block' with 'w-100' */}
-              <Button className="w-100" variant="warning" onClick={handleAddToCart}>
+              <Button className="w-100" variant="warning" onClick={handleAddToCart}  disabled={stock === 0}>
                 Add to cart
               </Button>
             </Col>

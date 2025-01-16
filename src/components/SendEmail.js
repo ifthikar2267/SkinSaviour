@@ -9,6 +9,7 @@ const comment = document.getElementById("comment");
 function sendEmail() {
     const bodyMessage = `Name : ${name.value}<br> Email : ${email.value}<br> phone Number : ${phoneNumber.value}<br> comment : ${comment.value}`
 
+    // eslint-disable-next-line no-undef
     Email.send({
         Host : "smtp.elasticemail.com",
         auth :{
