@@ -1,4 +1,5 @@
-import React, { useContext } from 'react';
+import React, { useContext , useEffect , useState} from 'react';
+import axios from "axios";
 import { useParams } from 'react-router-dom';
 import { CartContext } from '../contexts/CartContext.js';
 import products from '../Data/ingredients.json';
@@ -8,6 +9,45 @@ const ProductDetail = () => {
   const { addToCart } = useContext(CartContext); // Access addToCart
   const { id } = useParams();
   const product = products.find((product) => product.id === parseInt(id));
+
+
+
+  const [phoneNumber, setPhoneNumber] = useState("");
+
+  // Fetch the phone number from the backend
+  useEffect(() => {
+    axios.get("http://localhost:3002/api/whatsapp-phone")
+  .then((response) => {
+    setPhoneNumber(response.data.phone);
+  })
+  .catch((error) => {
+    console.error("Error fetching phone number:", error);
+  });
+
+  }, []);
+
+
+    // Function to handle "Buy Now" action
+    const handleBuyNow = () => {
+      if (!phoneNumber) {
+        alert("Failed to load phone number. Please try again later.");
+        return;
+      }
+  
+      const productMessage = `Hello, I am interested in buying the following product
+  
+  Name : ${title}
+  Price Rs : ${newPrice}`;
+  
+      const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+        productMessage
+      )}`;
+  
+      // Redirect to WhatsApp
+      window.location.href = url;
+    };
+
+
 
   if (!product) {
     return <h2>Product not found</h2>;
@@ -65,15 +105,23 @@ const ProductDetail = () => {
           <Row className="mt-3">
             <Col xs={12} md={6} className="mb-2">
               {/* Replace 'block' with 'w-100' */}
-              <Button className="w-100" variant="primary"  disabled={stock === 0}>
-                BUY NOW
-              </Button>
+              <Button
+                       variant="primary"
+                       onClick={handleBuyNow}
+                       disabled={stock === 0}
+                     >
+                       Buy Now
+                     </Button>
             </Col>
             <Col xs={12} md={6}>
               {/* Replace 'block' with 'w-100' */}
-              <Button className="w-100" variant="warning" onClick={handleAddToCart}  disabled={stock === 0}>
-                Add to cart
-              </Button>
+             <Button
+                       variant="warning"
+                       onClick={handleAddToCart}
+                       disabled={stock === 0}
+                     >
+                       Add to Cart
+                     </Button>
             </Col>
           </Row>
         </Col>
