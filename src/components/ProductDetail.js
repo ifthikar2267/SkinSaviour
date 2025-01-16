@@ -16,7 +16,7 @@ const ProductDetail = () => {
 
   // Fetch the phone number from the backend
   useEffect(() => {
-    axios.get("http://localhost:3002/api/whatsapp-phone")
+    axios.get("https://skin-saviour-server.vercel.app/api/whatsapp-phone")
   .then((response) => {
     setPhoneNumber(response.data.phone);
   })
