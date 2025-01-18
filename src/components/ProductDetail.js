@@ -10,13 +10,13 @@ const ProductDetail = () => {
   const { id } = useParams();
   const product = products.find((product) => product.id === parseInt(id));
 
-
+ 
 
   const [phoneNumber, setPhoneNumber] = useState("");
 
   // Fetch the phone number from the backend
   useEffect(() => {
-    axios.get("https://skin-saviour-server.vercel.app/api/whatsapp-phone")
+    axios.get("http://skin-saviour-server.vercel.app/api/whatsapp-phone")
   .then((response) => {
     setPhoneNumber(response.data.phone);
   })

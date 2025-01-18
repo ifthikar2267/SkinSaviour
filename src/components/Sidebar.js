@@ -5,7 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 
@@ -27,6 +27,9 @@ function Sidebar() {
           </Button>
           <div className="nav-image">
             <img alt='Logo' src='/assets/images/LogoNav.jpg' style={{width:"50px",height:"50px",}} class="rounded-circle"/>
+          </div>
+          <div className='cart-img'>
+          <a href="/cart"><FontAwesomeIcon icon={faCartShopping} /></a>
           </div>
           
 

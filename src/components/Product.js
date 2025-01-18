@@ -16,15 +16,18 @@ export const Product = ({ id, image, title, oldPrice, newPrice, stock }) => {
 
   // Fetch the phone number from the backend
   useEffect(() => {
-    axios.get("https://skin-saviour-server.vercel.app/api/whatsapp-phone")
-  .then((response) => {
-    setPhoneNumber(response.data.phone);
-  })
-  .catch((error) => {
-    console.error("Error fetching phone number:", error);
-  });
+     axios.get("https://skin-saviour-server.vercel.app/api/whatsapp-phone")
+    //  axios.get("http://localhost:3002/api/whatsapp-phone")
 
+      .then((response) => {
+        console.log("Phone number fetched:", response.data.phone);
+        setPhoneNumber(response.data.phone);
+      })
+      .catch((error) => {
+        console.error("Error fetching phone number:", error);
+      });
   }, []);
+  
 
   // Function to handle adding to the cart
   const handleAddToCart = () => {
@@ -38,10 +41,7 @@ export const Product = ({ id, image, title, oldPrice, newPrice, stock }) => {
       return;
     }
 
-    const productMessage = `Hello, I am interested in buying the following product
-
-Name : ${title}
-Price Rs : ${newPrice}`;
+    const productMessage = `Hello, I am interested in grabbing this fabulous ${title} at just ${newPrice}! How can I place my order?`;
 
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       productMessage
