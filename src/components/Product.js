@@ -84,10 +84,11 @@ export const Product = ({ id, image, title, oldPrice, newPrice, stock }) => {
           Add to Cart
         </Button>
         <Button
-          variant="primary"
-          onClick={handleBuyNow}
-          disabled={stock === 0}
-        >
+           variant="warning"
+           onClick={handleBuyNow}
+           disabled={stock === 0}
+           style={{ backgroundColor: "black", color: " #ffd700", border: "none" }}
+         >
           Buy Now
         </Button>
       </div>
@@ -108,7 +109,7 @@ const Products = () => {
           className="me-2"
           onChange={(event) => setSearchTerm(event.target.value)}
         />
-        <Button variant="outline-success">
+        <Button variant="outline-warning">
           <FontAwesomeIcon icon={faSearch} />
         </Button>
       </Form>

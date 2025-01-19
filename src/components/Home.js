@@ -11,7 +11,12 @@ function Home() {
 
   return (
     <div>
-      
+      <header class="bg-black text-warning text-center py-3">
+        <div class="moving-words">
+          <span>Welcome to Skin Saviour! | Homemade | Toxin-Free | Vegan | Cruelty-Free</span>
+        </div>
+      </header>
+
       <Carousel activeIndex={index} onSelect={handleSelect}>
         <Carousel.Item>
         <div className="img">
@@ -25,19 +30,19 @@ function Home() {
 
         <Carousel.Item>
           <div className="img">
-            <img src="./assets/images/Red wine gel.jpg" alt="Red Wine Gel" />
+          <img src="./assets/images/Homemade Gel.jpg" alt="Homemade Gel" />
           </div>
         </Carousel.Item>
 
         <Carousel.Item>
           <div className="img">
-            <img src="./assets/images/Aloevera Gel.jpg" alt="Aloe Vera Gel" />
+          <img src="./assets/images/Homemade Soap.jpg" alt="Homemade Soap" />
           </div>
         </Carousel.Item>
 
         <Carousel.Item>
           <div className="img">
-            <img src="./assets/images/Saffron Gel.jpg" alt="Saffron Gel" />
+          <img src="./assets/images/Homemade Lip Scrub.jpg" alt="Homemade Lip Scrub" />
           </div>
         </Carousel.Item>
       </Carousel>

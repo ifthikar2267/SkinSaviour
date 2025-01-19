@@ -22,16 +22,17 @@ function Sidebar() {
     <>
       <Navbar className="navbar navbar-expand-lg navbar-light bg-white">
         <Container fluid>
-          <Button variant="outline-primary" onClick={handleShow}>
+          <Button variant="outline-warning" onClick={handleShow}>
           <FontAwesomeIcon icon={faBars} />
           </Button>
-          <div className="nav-image">
-            <img alt='Logo' src='/assets/images/LogoNav.jpg' style={{width:"50px",height:"50px",}} class="rounded-circle"/>
-          </div>
           <div className='cart-img'>
-          <a href="/cart"><FontAwesomeIcon icon={faCartShopping} /></a>
+          <a href="/cart"><FontAwesomeIcon icon={faCartShopping} className="black-icon" />
+          </a>
           </div>
-          
+          <div className="nav-image">
+            <a href="/about"><img alt='Logo' src='/assets/images/LogoNav.jpg' style={{width:"50px",height:"50px",}} class="rounded-circle"/></a>
+          </div>
+        
 
           <Offcanvas show={show} onHide={handleClose} placement="start">
             <Offcanvas.Header closeButton>

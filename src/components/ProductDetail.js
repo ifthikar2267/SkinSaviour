@@ -106,12 +106,14 @@ const ProductDetail = () => {
             <Col xs={12} md={6} className="mb-2">
               {/* Replace 'block' with 'w-100' */}
               <Button
-                       variant="primary"
-                       onClick={handleBuyNow}
-                       disabled={stock === 0}
-                     >
-                       Buy Now
-                     </Button>
+                variant="warning"
+                onClick={handleBuyNow}
+                disabled={stock === 0}
+                style={{ backgroundColor: "black", color: " #ffd700", border: "none" }}
+              >
+                Buy Now
+            </Button>
+
             </Col>
             <Col xs={12} md={6}>
               {/* Replace 'block' with 'w-100' */}

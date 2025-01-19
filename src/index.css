@@ -416,3 +416,31 @@ h1 {
   margin-top: 20px;
 }
 
+
+.cart-img{
+  margin-left: auto;
+}
+
+
+.moving-words {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.moving-words span {
+  display: inline-block;
+  animation: moveWords 10s linear infinite;
+  font-weight: bold;
+}
+@keyframes moveWords {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+.black-icon {
+  color: #ffd700;
+}
