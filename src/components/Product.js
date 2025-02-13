@@ -1,137 +1,162 @@
-import React , { useContext } from 'react';
-import axios from "axios";
-import { useState , useEffect} from 'react';
-import { Container, Row, Col, Card, Button, Form } from 'react-bootstrap';
+import React, { useContext, useEffect, useState } from 'react'
+import { ShopContext } from '../contexts/ShopContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import products from '../Data/products.json';
+import { faSortDown } from '@fortawesome/free-solid-svg-icons';
+import Title from './Title';
 import { Link } from 'react-router-dom';
-import { CartContext } from '../contexts/CartContext.js';
+import { Card } from 'react-bootstrap';
+
+const Product = () => {
+
+  const {products , search , showSearch, currency } = useContext(ShopContext);
+  const [showFilter , setShowFilter] = useState(false);
+  const [filterProducts , setFilterProducts] = useState([]);
+  const [category , setCategory] = useState([]);
+  const[sortType , setSortType] = useState('relavent')
 
 
-export const Product = ({ id, image, title, oldPrice, newPrice, stock }) => {
-  const { addToCart } = useContext(CartContext);
+  const toggleCategory = (e) => {
 
-  const [phoneNumber, setPhoneNumber] = useState("");
+    if(category.includes(e.target.value)){
+      setCategory(prev => prev.filter(item => item !== e.target.value))
+    }
+    else{
+      setCategory(prev => [...prev , e.target.value])
+    }
+    
+  }
 
-  // Fetch the phone number from the backend
+  const applyFilter = () => {
+    let productsCopy = [...products];
+
+    if (showSearch && search) {
+      productsCopy = productsCopy.filter(item => item.title.toLowerCase().includes(search.toLowerCase()))
+    }
+  
+    if (category.length > 0) {
+      productsCopy = productsCopy.filter(item => category.includes(item.category));
+    }
+  
+    setFilterProducts(productsCopy);
+  };
+
+
+  const sortProduct = () => {
+    let fpCopy = products.slice();
+
+    switch (sortType) {
+      case 'low-high':
+        setFilterProducts(fpCopy.sort((a,b) => (a.price - b.price)));
+        break;
+
+      case 'high-low':
+        setFilterProducts(fpCopy.sort((a,b) => (b.price - a.price)));
+        break;
+
+      default:
+        applyFilter();
+        break;
+    }
+  }
+
   useEffect(() => {
-     axios.get("https://skin-saviour-server.vercel.app/api/whatsapp-phone")
-    //  axios.get("http://localhost:3002/api/whatsapp-phone")
-
-      .then((response) => {
-        console.log("Phone number fetched:", response.data.phone);
-        setPhoneNumber(response.data.phone);
-      })
-      .catch((error) => {
-        console.error("Error fetching phone number:", error);
-      });
-  }, []);
+    applyFilter();
+  }, [category, products, search, showSearch]); 
+  
+  useEffect(() => {
+    sortProduct();
+  },[sortType])
   
 
-  // Function to handle adding to the cart
-  const handleAddToCart = () => {
-    addToCart({ id, title, image, price: newPrice });
-  };
-
-  // Function to handle "Buy Now" action
-  const handleBuyNow = () => {
-    if (!phoneNumber) {
-      alert("Failed to load phone number. Please try again later.");
-      return;
-    }
-
-    const productMessage = `Hello, I am interested in grabbing this fabulous ${title} at just ${newPrice}! How can I place my order?`;
-
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-      productMessage
-    )}`;
-
-    // Redirect to WhatsApp
-    window.location.href = url;
-  };
-
   return (
-    <Card className="shadow-sm p-3 mb-5 bg-body rounded position-relative">
-      {stock === 0 && (
-        <div>
-          <span className="badge bg-danger text-uppercase">Out of Stock</span>
-        </div>
-      )}
-      <Link to={`/product/${id}`} className="text-decoration-none">
-        <div className="image-container">
-          <Card.Img
-            variant="top"
-            src={image}
-            alt={title}
-            className={`product-image ${stock === 0 ? "opacity-50" : ""}`}
-          />
-        </div>
-        <Card.Body className="text-center d-flex flex-column">
-          <Card.Title className="fs-4 text-black">{title}</Card.Title>
-          <span className="text-muted text-decoration-line-through fs-5 me-2">
-            Rs.{oldPrice}
-          </span>
-          <span className="text-dark gray fw-bold fs-4">Rs.{newPrice}</span>
-        </Card.Body>
-      </Link>
-      <div className="d-flex justify-content-between">
-        <Button
-          variant="warning"
-          onClick={handleAddToCart}
-          disabled={stock === 0}
-        >
-          Add to Cart
-        </Button>
-        <Button
-           variant="warning"
-           onClick={handleBuyNow}
-           disabled={stock === 0}
-           style={{ backgroundColor: "black", color: " #ffd700", border: "none" }}
-         >
-          Buy Now
-        </Button>
+    <div className="d-flex flex-column flex-sm-row gap-1 gap-sm-4 pt-4 border-top m-2">
+  {/* Filter Options */}
+  <div className="min-w-60 m-4">
+    <p onClick={() => setShowFilter(!showFilter)} className="my-2 fs-4 d-flex align-items-center cursor-pointer gap-2">
+      FILTERS 
+      <FontAwesomeIcon 
+        icon={faSortDown} 
+        className={`h-3 d-sm-none transition-transform ${showFilter ? 'rotate-360' : 'rotate-270'}`} 
+        onClick={() => setShowFilter(!showFilter)} 
+      />
+
+    </p>
+
+    {/* Category Filter */}
+    <div className={`border border-secondary ps-3 py-3 mt-3 ${showFilter ? '' : 'd-none'} d-sm-block`}>
+
+      <p className="mb-3 fs-6 fw-medium m-2">CATEGORIES</p>
+
+      <div className="d-flex flex-column gap-2 text-secondary m-2">
+        <p className="d-flex gap-2">
+          <input className="form-check-input" type="checkbox" value="Gel" onChange={toggleCategory}/> Gel
+        </p>
+        <p className="d-flex gap-2">
+          <input className="form-check-input" type="checkbox" value="Shampoo" onChange={toggleCategory} />Shampoo
+        </p>
+        <p className="d-flex gap-2">
+          <input className="form-check-input" type="checkbox" value="Soap" onChange={toggleCategory}/> Soap
+        </p>
+        <p className="d-flex gap-2">
+          <input className="form-check-input" type="checkbox" value="Lipscrub" onChange={toggleCategory} />Lipscrub
+        </p>
+        <p className="d-flex gap-2">
+          <input className="form-check-input" type="checkbox" value="Oil" onChange={toggleCategory}/> Oil
+        </p>
+        <p className="d-flex gap-2">
+          <input className="form-check-input" type="checkbox" value="Serum" onChange={toggleCategory}/> Serum
+        </p>
+        <p className="d-flex gap-2">
+          <input className="form-check-input" type="checkbox" value="Powder" onChange={toggleCategory}/> Powder
+        </p>
       </div>
-    </Card>
-  );
-};
+    </div>
+  </div>
 
-const Products = () => {
-  const [searchTerm, setSearchTerm] = useState('');
+ {/* Right Side */}
+      <div className="flex-grow m-2">
+        <div className="d-flex justify-content-between align-items-center mb-4 m-1">
+          <Title text1={'ALL'} text2={'COLLECTIONS'} />
 
-  return (
-    <Container>
-      {/* Search Form */}
-      <Form className="d-flex mb-4 mt-5">
-        <Form.Control
-          type="text"
-          placeholder="Search..."
-          className="me-2"
-          onChange={(event) => setSearchTerm(event.target.value)}
-        />
-        <Button variant="outline-warning">
-          <FontAwesomeIcon icon={faSearch} />
-        </Button>
-      </Form>
+          {/* Product Sort */}
+          <select onChange={(e) => setSortType(e.target.value)} className="form-select w-auto m-2 mb-4">
+            <option value="relavent">Sort by: Relevant</option>
+            <option value="low-high">Sort by: Low to High</option>
+            <option value="high-low">Sort by: High to Low</option>
+          </select>
+        </div>
 
-      {/* Product Filtering */}
-      <Row className="g-5 mt-5">
-        {products
-          .filter((val) => {
-            if (searchTerm === '') return val;
-            if (val.title.toLowerCase().includes(searchTerm.toLowerCase())) {
-              return val;
-            }
-            return null;
-          })
-          .map((product) => (
-            <Col key={product.id} md={4}>
-              <Product {...product} />
-            </Col>
+        {/* Map Products */}
+        <div className="row g-4">
+          {filterProducts.map((product, index) => (
+            <div key={index} className="col-6 col-md-4 col-lg-3">
+            <Link
+              to={`/product/${product._id}`} 
+              className="my-2 text-decoration-none text-black"
+            >
+              <Card className="h-100 text-centerb m-2">
+                <Card.Img
+                  variant="top"
+                  src={product.image}
+                  alt={product.title}
+                  className="img-fluid"
+                />
+                <Card.Body>
+                  <Card.Title className="fs-5">{product.title}</Card.Title>
+                  <Card.Text className="text-black fw-bold">
+                     {currency}{product.price}
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Link>
+            </div>
           ))}
-      </Row>
-    </Container>
-  );
-};
+        </div>
+      </div>
 
-export default Products;
+</div>
+
+  )
+}
+
+export default Product

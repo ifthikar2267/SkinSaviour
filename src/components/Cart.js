@@ -1,45 +1,102 @@
-import React, { useContext } from 'react';
-import { CartContext } from '../contexts/CartContext.js';
-import { ListGroup, Button } from 'react-bootstrap';
+import React, { useContext, useEffect, useState } from "react";
+import { ShopContext } from "../contexts/ShopContext";
+import Title from "./Title";
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import CartTotal from "./CartTotal";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
-  const { cartItems, removeFromCart } = useContext(CartContext);
+  const { products, cartItems, removeFromCart, updateQuantity, currency } = useContext(ShopContext);
+  const [cartData, setCartData] = useState([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if(products.length > 0) {
+      const tempData = Object.entries(cartItems).map(([id, quantity]) => {
+        const product = products.find((p) => p._id.toString() === id);
+        return product ? { ...product, quantity } : null;
+      });
+      setCartData(tempData.filter((item) => item)); // Remove nulls
+    }
+  }, [cartItems, products]);
 
   return (
-    <div>
-      <h2>Cart</h2>
-      {cartItems.length === 0 ? (
-        <p>Your cart is empty.</p>
-      ) : (
-        <ListGroup>
-          {cartItems.map((item) => (
-            <ListGroup.Item
-              key={item.id}
-              className="d-flex justify-content-between align-items-center"
-            >
-              <div>
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  style={{ width: '50px', marginRight: '10px' }}
-                />
-                {item.title} (x{item.quantity})
+    <div className="container my-5">
+      <div className="border-t pt-14">
+        <div className="text-2xl mb-3">
+          <Title text1={"YOUR"} text2={"CART"} />
+        </div>
+
+        {cartData.length === 0 ? (
+          <div className="text-center text-gray-500 py-4">
+            <p>Your cart is empty</p>
+          </div>
+        ) : (
+          <div className="row">
+            {cartData.map((item, index) => (
+              <div key={index} className="col-12 mb-3">
+                <div className="d-flex align-items-center border-bottom pb-3">
+                  {/* Image Section */}
+                  <img
+                    className="img-fluid rounded"
+                    src={Array.isArray(item.image) ? item.image[0] : item.image}
+                    alt={item.title}
+                    style={{ width: "80px", height: "auto" }}
+                  />
+                  {/* Text Section */}
+                  <div className="container">
+                    <p className="item-title">{item.title}</p>
+
+                    <div className="quantity-container">
+                      <span className="text-muted">Quantity:</span>
+                      <input
+                        className="form-control input-box"
+                        type="number"
+                        min="1"
+                        defaultValue={item.quantity}
+                        onChange={(e) =>
+                          e.target.value === "" || e.target.value === 0
+                            ? null
+                            : updateQuantity(item._id, Number(e.target.value))
+                        }
+                      />
+                    </div>
+
+                    <div className="price-container">
+                      {currency} {item.price || "N/A"}
+                    </div>
+
+                    <div className="trash">
+                      <FontAwesomeIcon
+                        icon={faTrashAlt}
+                        onClick={() => removeFromCart(item._id, 0)}
+                        className="varient-dark hover:"
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div>
-                Rs.{item.price * item.quantity}
-                <Button
-                  variant="danger"
-                  size="sm"
-                  className="ms-3"
-                  onClick={() => removeFromCart(item.id)}
+            ))}
+          </div>
+        )}
+
+        {cartData.length > 0 && (
+          <div className="d-flex justify-content-end my-5">
+            <div className="w-100" style={{ maxWidth: "450px" }}>
+              <CartTotal />
+              <div className="w-100 text-end">
+                <button
+                  onClick={() => navigate("/place-order")}
+                  className="btn btn-dark btn-sm px-4 py-2 mt-3"
                 >
-                  Remove
-                </Button>
+                  PROCEED TO CHECKOUT
+                </button>
               </div>
-            </ListGroup.Item>
-          ))}
-        </ListGroup>
-      )}
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

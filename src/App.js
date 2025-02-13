@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import Home from "./components/Home";
@@ -9,30 +9,22 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ProductDetail from './components/ProductDetail';
-import { Alert } from 'react-bootstrap';
-import { CartContext } from './contexts/CartContext.js';
+import Login from "./components/Login.js";
+import Orders from "./components/Orders.js";
+import PlaceOrder from "./components/PlaceOrder.js";
+import SearchBar from "./components/SearchBar.js";
+import {ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
-  const { alertMessage } = useContext(CartContext); // Get the alert message from context
-  
   return (
     <BrowserRouter>
       <Sidebar />
+      <SearchBar/>
       <div className="main-content">
-        {/* Display alert message if it exists */}
-        {alertMessage && (
-          <Alert
-          variant="success"
-          dismissible
-          className="position-fixed top-0 start-50 translate-middle-x mt-3"
-          style={{ zIndex: 1050, width: "100%" }}
-        >
-          {alertMessage}
-        </Alert>
-        
-        )}
 
         {/* Routes for different pages */}
+        <ToastContainer/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/product" element={<Product />} />
@@ -41,6 +33,9 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/orders" element={<Orders/>} />
+          <Route path="/place-order" element={<PlaceOrder/>} />
         </Routes>
       </div>
       <Footer />
