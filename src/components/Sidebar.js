@@ -6,6 +6,7 @@ import {faAngleLeft,faBagShopping,faBars,faSearch,faUserAlt,} from "@fortawesome
 import { ShopContext } from "../contexts/ShopContext";
 import axios from "axios";
 import { toast } from "react-toastify";
+import ChatBot from "./ChatBot";
 
 const Sidebar = () => {
   const { getTotalCartCount, backendUrl } = useContext(ShopContext);
@@ -44,7 +45,10 @@ const Sidebar = () => {
           height="50"
         />
       </Navbar.Brand>
-
+      <div className=" d-lg-block">
+      <ChatBot />
+      </div>
+      
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
           <Nav.Item>

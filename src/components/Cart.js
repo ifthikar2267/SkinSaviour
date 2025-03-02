@@ -7,12 +7,19 @@ import CartTotal from "./CartTotal";
 import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
-  const { products, cartItems, removeFromCart, updateQuantity, currency } = useContext(ShopContext);
+  const {
+    token,
+    products,
+    cartItems,
+    removeFromCart,
+    updateQuantity,
+    currency,
+  } = useContext(ShopContext);
   const [cartData, setCartData] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    if(products.length > 0) {
+    if (products.length > 0) {
       const tempData = Object.entries(cartItems).map(([id, quantity]) => {
         const product = products.find((p) => p._id.toString() === id);
         return product ? { ...product, quantity } : null;
@@ -20,6 +27,7 @@ const Cart = () => {
       setCartData(tempData.filter((item) => item)); // Remove nulls
     }
   }, [cartItems, products]);
+
 
   return (
     <div className="container my-5">
@@ -87,7 +95,14 @@ const Cart = () => {
               <CartTotal />
               <div className="w-100 text-end">
                 <button
-                  onClick={() => navigate("/place-order")}
+                  onClick={() => {
+                    if (!token) {
+                      alert("Please log in or sign up to proceed to checkout.");
+                      navigate("/login");
+                    } else {
+                      navigate("/place-order");
+                    }
+                  }}
                   className="btn btn-dark btn-sm px-4 py-2 mt-3"
                 >
                   PROCEED TO CHECKOUT

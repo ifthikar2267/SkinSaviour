@@ -22,7 +22,7 @@ function App() {
       <Sidebar />
       <SearchBar/>
       <div className="main-content">
-
+      
         {/* Routes for different pages */}
         <ToastContainer/>
         <Routes>
