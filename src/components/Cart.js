@@ -5,6 +5,7 @@ import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CartTotal from "./CartTotal";
 import { useNavigate } from "react-router-dom";
+import Sidebar from "./Sidebar";
 
 const Cart = () => {
   const {
@@ -30,16 +31,22 @@ const Cart = () => {
 
 
   return (
+    <div>
+      <Sidebar />
     <div className="container my-5">
       <div className="border-t pt-14">
-        <div className="text-2xl mb-3">
+        <div className="container-title text-2xl mb-3 fs-3">
           <Title text1={"YOUR"} text2={"CART"} />
         </div>
 
         {cartData.length === 0 ? (
           <div className="text-center text-gray-500 py-4">
-            <p>Your cart is empty</p>
+            <img className="cart-empty" src="./assets/images/cart-empty.png" alt="" />
+            <p className="cart-empty-p fs-3"><b>Oops!<br />Your cart is currently empty</b></p>
+
+            <button className="cart-empty-button fs-4 mt-5" onClick={() => navigate("/product")}>Continue Shopping</button>
           </div>
+          
         ) : (
           <div className="row">
             {cartData.map((item, index) => (
@@ -112,6 +119,7 @@ const Cart = () => {
           </div>
         )}
       </div>
+    </div>
     </div>
   );
 };

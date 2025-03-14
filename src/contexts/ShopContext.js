@@ -41,7 +41,8 @@ const ShopContextProvider = (props) => {
             //image: product.image,
             quantity: 1,
           },
-          { headers: { token } }
+          { headers: { Authorization: `Bearer ${token}` } }
+
         );
        
       } catch (error) {
@@ -75,7 +76,8 @@ const ShopContextProvider = (props) => {
         await axios.post(
           backendUrl + "/api/cart/update",
           { productId, quantity },
-          { headers: { token } }
+          { headers: { Authorization: `Bearer ${token}` } }
+
         );
       } catch (error) {
         console.log(error);
@@ -123,7 +125,8 @@ const ShopContextProvider = (props) => {
       const response = await axios.post(
         backendUrl + "/api/cart/get",
         {}, 
-        { headers: { token } }
+        { headers: { Authorization: `Bearer ${token}` } }
+
       );
   
       if (response.data.success) {

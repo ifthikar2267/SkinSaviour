@@ -1,71 +1,157 @@
-import React from 'react';
-import { useState } from 'react';
-import Carousel from 'react-bootstrap/Carousel';
-import LatestCollection from './LatestCollection';
+import React, { useContext, useEffect, useState } from "react";
+import LatestCollection from "./LatestCollection";
+import Sidebar from "./Sidebar";
+import Title from "./Title";
+import Footer from "./Footer";
+import { useNavigate, useParams } from "react-router-dom";
+import { Card } from "react-bootstrap";
+import { ShopContext } from "../contexts/ShopContext";
+import { FaShoppingBag } from "react-icons/fa";
 
 function Home() {
-  const [index, setIndex] = useState(0);
+  const navigate = useNavigate();
+  const { id } = useParams();
+  const { products, currency, addToCart } = useContext(ShopContext);
+  const [productData, setProductData] = useState(null);
+  const [image, setImage] = useState("");
 
-  const handleSelect = (selectedIndex) => {
-    setIndex(selectedIndex);
+  useEffect(() => {
+    if (!id || !products.length) return; // Ensure id and products are available before running the search
+
+    const product = products.find(
+      (item) => item._id && item._id.toString() === id
+    );
+    if (product) {
+      setProductData(product);
+      setImage(Array.isArray(product.image) ? product.image[0] : product.image);
+    } else {
+      setProductData(null); // Prevents undefined issues
+    }
+  }, [id, products]);
+
+  const handleAddToCart = (productId) => {
+    addToCart(productId);
   };
 
   return (
+    <div style={{background:"#F5F0EA"}}>
+      <Sidebar />
+      <div className="container-home-button">
+        <button
+          className="button"
+          value="Gel"
+          onClick={() => navigate("/product")}
+        >
+          Gel
+        </button>
+        <button
+          className="button"
+          value="Serum"
+          onClick={() => navigate("/product")}
+        >
+          Serum
+        </button>
+        <button
+          className="button"
+          value="Oil"
+          onClick={() => navigate("/product")}
+        >
+          Oil
+        </button>
+        <button
+          className="button"
+          value="Lipscrub"
+          onClick={() => navigate("/product")}
+        >
+          Lipscrub
+        </button>
+      </div>
+      <div className="container-home-header text-center py-4 display-4 mt-3">
+        <Title text1="HERBAL" text2="PRODUCTS" />
+        <div className="carousel-container mt-3 ">
+          <Card className=" product-card rounded-5 overflow-visible">
+            <div className="product-card-background"></div>
+            <Card.Img
+              variant="top"
+              src="./assets/images/Aloevera-bg.png"
+              alt="Aloevera gel"
+              className="home-img-fluid"
+            />
+            <Card.Body className="product-card-body">
+              <Card.Title className="fs-3 text-start fw-bold mb-1">
+                Aloevera Gel
+              </Card.Title>
+              <Card.Text className="fs-3 text-start fw-bold">
+                {currency}
+                180
+              </Card.Text>
+              <FaShoppingBag
+                onClick={() => {
+                  handleAddToCart("67b19de42680e6385358d4ab");
+                }}
+                className="product-card-bag"
+              />
+            </Card.Body>
+          </Card>
 
-    <div>
-      <header className="bg-black text-warning text-center py-3">
-        <div className="moving-words">
-          <span>Welcome to Skin Saviour! | Homemade | Toxin-Free | Vegan | Cruelty-Free</span>
+          <Card className=" product-card rounded-5 overflow-visible">
+            <div className="product-card-background"></div>
+            <Card.Img
+              variant="top"
+              src="./assets/images/Saffron-bg.png"
+              alt="Saffron gel"
+              className="home-img-fluid"
+            />
+            <Card.Body className="product-card-body">
+              <Card.Title className="fs-3 text-start fw-bold">
+                Saffron Gel
+              </Card.Title>
+              <Card.Text className="fs-3 text-start fw-bold">
+                {currency}
+                180
+              </Card.Text>
+              <FaShoppingBag
+                onClick={() => handleAddToCart("67c4ac849bb0c4cd1d394026")}
+                className="product-card-bag"
+              />
+            </Card.Body>
+          </Card>
+
+          <Card className=" product-card rounded-5 overflow-visible">
+            <div className="product-card-background"></div>
+            <Card.Img
+              variant="top"
+              src="./assets/images/Redwine-bg.png"
+              alt="Redwine gel"
+              className="home-img-fluid"
+            />
+            <Card.Body className="product-card-body">
+              <Card.Title className="fs-3 text-start fw-bold">
+                Redwine Gel
+              </Card.Title>
+              <Card.Text className="fs-3 text-start fw-bold">
+                {currency}
+                250
+              </Card.Text>
+              <FaShoppingBag
+              onClick={() => handleAddToCart("67c4acc99bb0c4cd1d394028")}
+              className="product-card-bag"
+            />
+            </Card.Body>
+            
+          </Card>
         </div>
-      </header>
 
-      <Carousel activeIndex={index} onSelect={handleSelect}>
-        <Carousel.Item>
-        <div className="img">
-            <img src="./assets/images/skinSaviour.jpg" alt="" />
-          </div>
-          <Carousel.Caption>
-            <h3>Home Made Cosmetics</h3>
-            <p>Handmade skincare products that are not only effective but also safe for you and the environment.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-
-        <Carousel.Item>
-          <div className="img">
-          <img src="./assets/images/Homemade Gel.jpg" alt="Homemade Gel" />
-          </div>
-        </Carousel.Item>
-
-        <Carousel.Item>
-          <div className="img">
-          <img src="./assets/images/Homemade Soap.jpg" alt="Homemade Soap" />
-          </div>
-        </Carousel.Item>
-
-        <Carousel.Item>
-          <div className="img">
-          <img src="./assets/images/Homemade Lip Scrub.jpg" alt="Homemade Lip Scrub" />
-          </div>
-        </Carousel.Item>
-      </Carousel>
-
-      <LatestCollection/>
-
-      <div className="heading1">
-        <h1>Skin Saviour</h1>
+        <div
+          style={{
+            padding: "10px",
+          }}
+        >
+          <LatestCollection />
+        </div>
       </div>
-      <div className="para1">
-        <p>Skin Saviour offers a unique range of homemade skin cosmetics crafted with care and love. Our products are <strong> toxin-free, vegan, and cruelty-free </strong>, ensuring that every ingredient is natural and beneficial for your skin. We believe in the power of nature to heal and nourish, providing you with skincare solutions that are as kind to the environment as they are to your skin. With Skin Saviour, you can indulge in pure, effective, and ethical skincare that truly makes a difference.</p>
-      </div>
-
-     
-
-      <div className="buy-button">
-        <a href="/product"><button>View Products</button></a>
-      </div>
+      <Footer />
     </div>
-
-  
   );
 }
 

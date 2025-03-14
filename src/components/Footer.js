@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   let date = new Date()
   return (
-    <footer class="footer mt-5">
+    <footer class="footer">
     <div class="footer-container m-1">
       <div class="footer-section">
       <a href="/"><img alt='Logo' src='/assets/images/LogoHead.jpg' style={{width:"100px",height:"100px"}}/></a>
@@ -16,7 +16,6 @@ const Footer = () => {
         <ul>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/product">Products</Link></li>
-          <li><Link to="/category">Category</Link></li>
           <li><Link to="/about">About</Link></li>
           <li><Link to="/contact">Contact</Link></li>
         </ul>

@@ -10,32 +10,32 @@ const LatestCollection = () => {
   const [latestProducts, setLatestProducts] = useState([]);
 
   useEffect(() => {
-    setLatestProducts(products.slice(0, 10)); // Fetch top 10 products
+    setLatestProducts(products.slice(0, 6)); // Fetch top 6 products
   }, [products]);
 
   return (
-    <div className="my-5">
-      <div className="text-center py-4 display-4">
+    <div className="my-4">
+      <div className="lattestcollection-container text-center display-4 mb-5">
         <Title text1="LATEST" text2="COLLECTIONS" />
       </div>
 
-      <div className="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-4 gy-5 p-5">
+      <div className="product-container row g-4 ">
         {latestProducts.map((product, index) => (
           <div key={index} className="col">
             <Link
               to={`/product/${product._id}`} 
-              className="my-2 text-decoration-none text-black"
+              className="text-decoration-none text-black"
             >
-              <Card className="h-100 text-center">
+              <Card className="card h-100 rounded-5">
                 <Card.Img
                   variant="top"
                   src={product.image}
                   alt={product.title}
-                  className="img-fluid"
+                  className="lattestcollection-img-fluid"
                 />
                 <Card.Body>
-                  <Card.Title className="fs-5">{product.title}</Card.Title>
-                  <Card.Text className="text-black fw-bold">
+                  <Card.Title className="fs-5 text-center">{product.title}</Card.Title>
+                  <Card.Text className="text-black fw-bold fs-4">
                     {currency}{product.price}
                   </Card.Text>
                 </Card.Body>
@@ -49,3 +49,11 @@ const LatestCollection = () => {
 };
 
 export default LatestCollection;
+
+
+
+
+
+
+
+

@@ -48,8 +48,8 @@ const SearchBar = () => {
   };
 
   return showSearch && visible ? (
-    <Container fluid className='border-top border-bottom bg-white text-center py-3'>
-      <InputGroup className='mx-auto' style={{ maxWidth: '500px' }}>
+    <Container fluid className='border-top border-bottom bg-white text-center py-3 search-bar'>
+      <InputGroup className='mx-auto' style={{ maxWidth: '100%' }}>
         <FormControl
           value={search}
           onChange={(e) => setSearch(e.target.value)}

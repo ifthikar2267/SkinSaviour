@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMicrophone } from "@fortawesome/free-solid-svg-icons";
 import { ShopContext } from "../contexts/ShopContext";
 
+
 const ChatBot = () => {
   const { backendUrl } = useContext(ShopContext);
   const [messages, setMessages] = useState([]);
@@ -75,7 +76,7 @@ const ChatBot = () => {
           <Modal.Title>AI Chatbot</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Card className="p-3 shadow-sm">
+          <Card className="p-3 shadow-sm" style={{margin:"70px"}}>
             <Card.Body style={{ height: "300px", overflowY: "auto" }}>
               {messages.map((msg, index) => (
                 <div key={index} className={`p-2 my-1 ${msg.sender === "user" ? "text-end" : "text-start"}`}>

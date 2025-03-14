@@ -5,6 +5,7 @@ import { ShopContext } from "../contexts/ShopContext";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import Sidebar from "./Sidebar";
 
 const PlaceOrder = () => {
   const [method, setMethod] = useState("cod");
@@ -65,24 +66,30 @@ const PlaceOrder = () => {
     setFormData((data) => ({ ...data, [name]: value }));
   };
 
-  const initPay = (order) => {
+  const initPay = (order, orderData) => {
     const options = {
       key: process.env.REACT_APP_RAZORPAY_KEY_ID,
-      amount: order.totalPrice,
-      currency: order.currency,
-      name: 'Order Payment',
-      description: 'Order Payment',
-      order_id: order.id,
-      receipt: order.receipt,
+      amount: order.amount,
+      currency: "INR",
+      name: "Order Payment",
+      description: "Order Payment",
+      order_id: order.id, // Ensure correct ID
       handler: async (response) => {
-        console.log(response)
         try {
-          
-          const {data} = await axios.post(backendUrl + '/api/order/verifyRazorpay',response,{headers: {token}})
+          const { data } = await axios.post(
+            backendUrl + "/api/order/verifyRazorpay",
+            {
+              razorpay_order_id: response.razorpay_order_id, // Ensure correct ID
+              razorpay_payment_id: response.razorpay_payment_id,
+              ...orderData, // Send full order details
+            },
+            { headers: { Authorization: `Bearer ${token}` } }
+          );
+  
           if (data.success) {
             toast.success("Payment successful! Your order is confirmed");
-            setCartItems({}); // Clear the cart
-            navigate("/orders"); // Redirect to orders page
+            setCartItems({});
+            navigate("/orders");
           } else {
             toast.error("Payment verification failed.");
           }
@@ -90,12 +97,19 @@ const PlaceOrder = () => {
           console.error("Error verifying payment:", error);
           toast.error("Payment verification error.");
         }
-        
-      }
-    }
-    const rzp = new window.Razorpay(options)
-    rzp.open()
-  }
+      },
+      prefill: {
+        name: formData.firstName + " " + formData.lastName,
+        email: formData.email,
+        contact: formData.phoneNumber,
+      },
+    };
+  
+    const rzp = new window.Razorpay(options);
+    rzp.open();
+  };
+  
+  
 
   const onSubmitHandler = async (event) => {
     event.preventDefault();
@@ -106,9 +120,7 @@ const PlaceOrder = () => {
       // Loop through cartItems object
       for (const [itemId, quantity] of Object.entries(cartItems)) {
         if (quantity > 0) {
-          const itemInfo = products.find(
-            (product) => product._id.toString() === itemId
-          );
+          const itemInfo = products.find((product) => product._id.toString() === itemId);
           if (itemInfo) {
             orderItems.push({ ...itemInfo, quantity });
           }
@@ -130,49 +142,49 @@ const PlaceOrder = () => {
         items: orderItems.map((item) => ({
           productId: item._id,
           title: item.title,
-          quantity: item.quantity,
           image: item.image || [],
-          amount: {
-            price: item.price,
-            totalPrice: item.price * item.quantity,
+          price: {
+            baseRate: item.price,
+            quantity: item.quantity,
+            total: item.price * item.quantity,
           },
         })),
-        totalPrice: getCartAmount() + delivery_fee,
-        paymentMethod: method, // Store selected payment method
+        totals: {
+          quantity: orderItems.reduce((sum, item) => sum + item.quantity, 0),
+          total: getCartAmount() + delivery_fee,
+        },
+        paymentMethod: method,  // Add selected payment method
+        paymentStatus: method === "cod" ? "Pending" : "Paid",
       };
   
-      if (method === "cod") {
-        // If Cash on Delivery, directly create the order
-        const response = await axios.post(
-          backendUrl + "/api/order/place",
-          orderData,
-          { headers: { token } }
-        );
-  
-        if (response.data.success) {
-          toast.success("Order placed successfully with Cash on Delivery!");
-          setCartItems({});
-          navigate("/orders");
-        } else {
-          toast.error("Order placement failed. Please try again.");
-        }
-      } else if (method === "razorpay") {
-        // If Razorpay is selected, initiate payment
+      if (method === "razorpay") {
         try {
-          const responseRazorpay = await axios.post(
-            backendUrl + "/api/order/razorpay",
-            orderData,
-            { headers: { token } }
-          );
+          const responseRazorpay = await axios.post(backendUrl + "/api/order/razorpay", orderData,  { headers: { Authorization: `Bearer ${token}` } });
   
           if (responseRazorpay.data.success) {
-            initPay(responseRazorpay.data.order);
+            initPay(responseRazorpay.data.razorpayOrder, orderData);
           } else {
             toast.error("Error initializing Razorpay payment.");
           }
         } catch (error) {
           console.error("Razorpay payment error:", error);
           toast.error("Payment initialization failed.");
+        }
+      } else if (method === "cod") {
+        // Handle Cash on Delivery (COD)
+        try {
+          const responseCOD = await axios.post(backendUrl + "/api/order/place", orderData,  { headers: { Authorization: `Bearer ${token}` } });
+  
+          if (responseCOD.data.success) {
+            toast.success("Order placed successfully! Please pay upon delivery.");
+            setCartItems({}); // Clear cart
+            navigate("/orders"); // Redirect to orders page
+          } else {
+            toast.error("Error placing COD order.");
+          }
+        } catch (error) {
+          console.error("COD order error:", error);
+          toast.error("Error processing your order.");
         }
       }
     } catch (error) {
@@ -181,7 +193,10 @@ const PlaceOrder = () => {
     }
   };
   
+  
   return (
+    <div>
+      <Sidebar />
     <form onSubmit={onSubmitHandler} className="container my-5 border-top pt-5">
       <div className="row justify-content-center">
         <div className="col-md-6">
@@ -234,7 +249,7 @@ const PlaceOrder = () => {
               value={formData.street}
               type="text"
               className="form-control"
-              placeholder="Street"
+              placeholder="Door No & Street"
             />
           </div>
 
@@ -360,6 +375,7 @@ const PlaceOrder = () => {
         </div>
       </div>
     </form>
+    </div>
   );
 };
 
