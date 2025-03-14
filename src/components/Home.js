@@ -66,9 +66,9 @@ function Home() {
           Lipscrub
         </button>
       </div>
-      <div className="container-home-header text-center py-4 display-4 mt-3">
+      <div className="container-home-header text-center py-4 display-4 fs-2">
         <Title text1="HERBAL" text2="PRODUCTS" />
-        <div className="carousel-container mt-3 ">
+        <div className="carousel-container ">
           <Card className=" product-card rounded-5 overflow-visible">
             <div className="product-card-background"></div>
             <Card.Img

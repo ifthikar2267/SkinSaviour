@@ -111,7 +111,7 @@ const Sidebar = () => {
           </span>
         </h4>
       </div>
-      <div className={`floating-navbar w-100 p-3 ${isSticky ? "sticky" : ""}`}>
+      <div className={`floating-navbar w-100 p-2 ${isSticky ? "sticky" : ""}`}>
         <Navbar
           expand="sm"
           className="w-100 py-3 px-4 d-flex align-items-center justify-content-between "

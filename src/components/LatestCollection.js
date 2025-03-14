@@ -14,8 +14,8 @@ const LatestCollection = () => {
   }, [products]);
 
   return (
-    <div className="my-4">
-      <div className="lattestcollection-container text-center display-4 mb-5">
+    <div style={{marginTop:"-10px"}}>
+      <div className="lattestcollection-container text-center display-4 mb-5 fs-2">
         <Title text1="LATEST" text2="COLLECTIONS" />
       </div>
 
@@ -26,7 +26,7 @@ const LatestCollection = () => {
               to={`/product/${product._id}`} 
               className="text-decoration-none text-black"
             >
-              <Card className="card h-100 rounded-5">
+              <Card className="card h-100 rounded-5" style={{marginTop:"-15px"}}>
                 <Card.Img
                   variant="top"
                   src={product.image}

@@ -31,6 +31,7 @@ body {
   width: 320px;
   height: 350px;
   background: white;
+  margin-top: -15px;
   border-radius: 30px; /* Rounded corners */
   padding: 15px;
   text-align: center;
@@ -101,9 +102,9 @@ position: relative !important;
   background-color: white;
   color: black;
   align-items: center;
-  padding: 8px 92px;
+  padding: 0px 92px;
   z-index: 1000;
-  font-size: 17px;
+  font-size: 16px;
   display: flex;
   white-space: nowrap; 
 }
@@ -196,9 +197,9 @@ position: relative !important;
   transform: translateX(0);
   visibility: visible;
   opacity: 1;
-  left: -20px;
+  left: -8px;
   width: 440px;
-  margin-top: 79px;
+  margin-top: 70px;
 }
 
 
@@ -221,11 +222,10 @@ position: relative !important;
   margin-left: 0px;
   margin-top: 10px;
   text-align: left;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: bold;
   text-decoration: none;
   color: black;
-  border-bottom: 1px solid #ddd; /* Horizontal lines between items */
   transition: all 0.3s ease-in-out;
 }
 
@@ -239,7 +239,7 @@ position: relative !important;
 .sidebar-bottom {
   padding: 50px 80px;
   text-align: center;
-  margin-top: 20px;
+  margin-top: -17px;
 }
 
 .sidebar-bottom a {
@@ -268,17 +268,17 @@ position: relative !important;
   display: flex;
   justify-content: center;
   gap: 20px;
-  margin-top: 10px;
+  margin-top: -5px;
 }
 
 .sidebar-social-icons a {
     display: inline-block;
     margin-right: 10px;
     color: #343a40; 
-    font-size: 33px;
-    width: 70px;
+    font-size: 20px;
+    width: 60px;
     transition: color 0.3s ease;
-    background-color: #f8f9fa;
+    background-color: #979a9e;
     padding: 10px; 
     border-radius: 50%; 
     border: 2px solid #f8f9fa; 
@@ -324,6 +324,11 @@ position: relative !important;
   opacity: 0.9;
 }
 
+.container-home-header {
+  margin-top: -10px;
+  
+}
+
 /* Make images rounded */
 .img img {
   border-radius: 40px !important;
@@ -348,7 +353,7 @@ position: relative !important;
   scroll-snap-type: x mandatory; /* Smooth scrolling effect */
   padding-bottom: 10px; /* Avoid scrollbar overlapping */
   background-color: #F5F0EA !important;
-  padding: 50px;
+  padding: 40px;
 }
 
 /* Ensures smooth scrolling for each image */
@@ -384,6 +389,7 @@ position: relative !important;
   color: white;
   cursor: pointer;
 }
+
 /*---------------------------------------------------------------*/
 .card{
   border-radius: 20px; /* Rounded corners */
@@ -789,7 +795,7 @@ position: relative !important;
   text-align: center;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .footer-container {
