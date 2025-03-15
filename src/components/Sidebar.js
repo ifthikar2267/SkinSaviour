@@ -3,11 +3,9 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { Navbar, Nav, Badge } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faAngleRight,
   faBagShopping,
   faBars,
   faSearch,
-  faUserAlt,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { ShopContext } from "../contexts/ShopContext";

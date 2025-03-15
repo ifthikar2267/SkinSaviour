@@ -18,8 +18,8 @@ const RelatedProducts = ({category}) => {
     }, [products, category]);
     
   return (
-    <div className="my-5">
-        <div className="text-center py-3 display-4">
+    <div className="my-3">
+        <div className="text-center py-3 display-4 fs-2">
             <Title text1={'RELATED'} text2={'PRODUCTS'}/>
         </div>
         <div className="product-container row g-4">
@@ -30,7 +30,7 @@ const RelatedProducts = ({category}) => {
                         to={`/product/${product._id}`} 
                         className="text-decoration-none text-black"
                       >
-                        <Card className="card h-100 text-centerb   rounded-5 border-5 border-gray">
+                        <Card className="card h-100 text-centerb   rounded-5 ">
                           <Card.Img
                             variant="top"
                             src={product.image}

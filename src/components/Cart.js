@@ -57,14 +57,14 @@ const Cart = () => {
                     className="img-fluid rounded"
                     src={Array.isArray(item.image) ? item.image[0] : item.image}
                     alt={item.title}
-                    style={{ width: "80px", height: "auto" }}
+                    style={{ width: "110px", height: "auto" }}
                   />
                   {/* Text Section */}
-                  <div className="container">
-                    <p className="item-title">{item.title}</p>
+                  <div>
+                  <p className="cart-title">{item.title}</p>
 
                     <div className="quantity-container">
-                      <span className="text-muted">Quantity:</span>
+                      <span >Quantity:</span>
                       <input
                         className="form-control input-box"
                         type="number"
@@ -97,7 +97,7 @@ const Cart = () => {
         )}
 
         {cartData.length > 0 && (
-          <div className="d-flex justify-content-end my-5">
+          <div className="d-flex justify-content-end my-5 ms-3">
             <div className="w-100" style={{ maxWidth: "450px" }}>
               <CartTotal />
               <div className="w-100 text-end">

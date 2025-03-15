@@ -278,7 +278,7 @@ position: relative !important;
     font-size: 20px;
     width: 60px;
     transition: color 0.3s ease;
-    background-color: #979a9e;
+    background-color: #c3c6ca;
     padding: 10px; 
     border-radius: 50%; 
     border: 2px solid #f8f9fa; 
@@ -709,15 +709,16 @@ position: relative !important;
 /*product page */
 .product-container .card {
   width: 190px;
-  margin: auto;
   box-shadow: 0px -8px 15px rgba(0, 0, 0, 0.0), 
-  0px 8px 15px rgba(0, 0, 0, 0.2);
+  0px 8px 15px rgba(0, 0, 0, 0.3);
 
 }
 
 /*product detail page*/
 .productdetail-card {
   margin-left: 70px;
+  box-shadow: 0px -8px 15px rgba(0, 0, 0, 0.0), 
+  0px 8px 15px rgba(0, 0, 0, 0.4);
 }
 
 .productdetail-title .fw-bold {
@@ -725,13 +726,53 @@ position: relative !important;
   color: #000000 !important;
 }
 
+.productDetail-arrow-left {
+  font-size: 2rem; /* Adjust icon size */
+  cursor: pointer;
+  margin-left: 30px;
+  color: black !important;
+}
+
+.ratingstar  {
+  margin-top: -20px;
+  margin-left: -12px;
+}
+
 .addtocart-btn {
-  background-color: #495057 !important;
-  color: whitesmoke;
+  background-color: white !important;
+  color: black;
   border-radius: 30px;
-  width: 100%;
-  margin-left: -7px;
+  width: 80%;
+  margin-top: 10px;
+  border: none;
+  margin-left: 7px;
   height: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.productdetail-card-bag {
+  cursor: pointer;
+  pointer-events: auto !important;
+  z-index: 10;
+  position: relative;
+  background-color: #4A2E1D; /* Adjust color */
+  border-radius: 50%; /* Makes it circular */
+  padding: 10px;
+  margin-left: 330px;
+  margin-top: -58px;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+  color: #F7F4EC;
+}
+
+/* Ensure NavLink works properly */
+.position-relative {
+  position: relative !important;
 }
 
 .relatedproduct-container .card {
@@ -850,8 +891,8 @@ position: relative !important;
   display: inline-block;
   margin-right: 10px;
   color: #0A2740;
-  font-size: 30px;
-  width: 70px;
+  font-size: 20px;
+  width: 55px;
   transition: color 0.3s ease;
   background-color: #F4E1C1;
   padding: 10px;
@@ -907,7 +948,7 @@ position: relative !important;
 }
 
 .about-card {
-  background: beige;
+  background: #F5F0EA;
   margin: 0px auto 10px;
   padding: 20px;
   border-radius: 30px;
@@ -1221,6 +1262,12 @@ h1 {
   justify-content: space-between;
 }
 
+.cart-title {
+  margin-left: 46px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
 .item-title {
   font-weight: bold;
   font-size: 1.25rem;
@@ -1260,6 +1307,7 @@ h1 {
 
   .quantity-container {
     flex-direction: column;
+    margin-left: 50px;
     align-items: flex-start;
     gap: 0.5rem;
   }
@@ -1269,8 +1317,9 @@ h1 {
   }
 
   .price-container {
-    margin-top: 0.5rem;
+    margin-top: 1.5rem;
     font-size: 1rem;
+    margin-left: 51px;
     text-align: left;
   }
 }
@@ -1278,6 +1327,10 @@ h1 {
 .trash{
   align-items: end;
   justify-content: flex-end;
+  margin-left: 10px;
+  margin-left: 239px;
+  margin-top: -24px;
+  font-size: large;
 }
 
 .varient-dark {

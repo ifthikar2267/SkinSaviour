@@ -1,17 +1,21 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { ShopContext } from "../contexts/ShopContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
-import { Card } from "react-bootstrap";
+import { Badge, Card } from "react-bootstrap";
 import RelatedProducts from "./RelatedProducts";
-import Sidebar from "./Sidebar";
+
+import { FaArrowCircleLeft, FaShoppingBag } from "react-icons/fa";
 
 const ProductDetail = () => {
   const { id } = useParams();
-  const { products, currency, addToCart } = useContext(ShopContext);
+  const { products, currency, addToCart, getTotalCartCount } =
+    useContext(ShopContext);
+  const cartCount = getTotalCartCount();
   const [productData, setProductData] = useState(null);
   const [image, setImage] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!id || !products.length) return; // Ensure id and products are available before running the search
@@ -28,7 +32,7 @@ const ProductDetail = () => {
 
   const handleAddToCart = () => {
     if (!productData) return; // Prevent errors if productData is not yet available
- 
+
     addToCart(productData._id); // Use _id instead of id
   };
 
@@ -41,13 +45,19 @@ const ProductDetail = () => {
   }
 
   return (
-    <div>
-      <Sidebar />
-      <div className="container mt-5 border-top pt-4 m-1">
+    <div style={{ background: "#D7AC7E" }}>
+      <div
+        style={{ paddingTop: "30px" }}
+        className="productDetail-arrow-left"
+        onClick={() => navigate(-1)}
+      >
+        <FaArrowCircleLeft />
+      </div>
+      <div className="container mt-1 pt-4 m-1">
         <div className="row g-4">
           {/* Product Image */}
           <div className="col-md-5">
-            <Card className="productdetail-card border-5 shadow-none rounded-5 ">
+            <Card className="productdetail-card rounded-5 ">
               <Card.Img
                 variant="top"
                 src={image}
@@ -62,7 +72,7 @@ const ProductDetail = () => {
             <h1 className="fw-bold">{productData.title}</h1>
 
             {/* Star Ratings */}
-            <div className="d-flex align-items-center justify-content-center ms-1 mt-2 mt-sm-0">
+            <div className="ratingstar d-flex align-items-center justify-content-center mt-sm-0">
               {[...Array(5)].map((_, index) => (
                 <FontAwesomeIcon
                   key={index}
@@ -105,26 +115,55 @@ const ProductDetail = () => {
             {/* Add to Cart Button */}
             <button
               onClick={handleAddToCart}
-              className="addtocart-btn btn-dark px-4 py-2 mt-3"
+              className="addtocart-btn fw-bold px-4 py-2 mt-3"
             >
               ADD TO CART
             </button>
-            <hr className="mt-4 sm:w-75" />
+            <div className="position-relative d-inline-block">
+                {/* Shopping Bag Icon */}
+                <FaShoppingBag 
+                onClick={() => navigate("/cart")}
+                className="productdetail-card-bag" />
 
-            <div className="text-sm text-gray-500 mt-5">
-              <p>Homemade</p>
-              <p>100% Original Product</p>
-              <p>0% Chemicals</p>
+                {/* Cart Count Badge */}
+                {cartCount > 0 && (
+                  <Badge
+                    pill
+                    bg="light"
+                    text="dark"
+                    className="position-absolute top-0 start-100 translate-middle border border-dark"
+                    style={{
+                      borderRadius: "50%",
+                      width: "30px",
+                      height: "30px",
+                      display: "flex",
+                      alignItems: "center",
+                      marginTop: "-60px",
+                      border: "none",
+                      justifyContent: "center",
+                      fontSize: "15px",
+                      background:""
+                    }}
+                  >
+                    {cartCount}
+                  </Badge>
+                )}
+            </div>
+
+            <div className="text-sm text-gray-500 mt-4">
+              <p><b>Homemade</b></p>
+              <p><b>100% Original Product</b></p>
+              <p><b>0% Chemicals</b></p>
             </div>
 
             {/* Description & Review Section */}
-            <div className="mt-5">
+            <div className="mt-4">
               <div className="d-flex">
                 <b className="border px-5 py-3 text-sm">Description</b>
                 <p className="border px-5 py-3 text-sm mb-0">Reviews (122)</p>
               </div>
 
-              <p className="mt-3">
+              <p className="mt-4">
                 An e-commerce website is an online platform that facilitates the
                 buying and selling of products or services over the internet. It
                 serves as a virtual marketplace where businesses and individuals
@@ -141,10 +180,9 @@ const ProductDetail = () => {
             </div>
 
             {/* Related Products */}
-            <div style={{marginRight:"2px"}}>
-            <RelatedProducts category={productData.category} />
+            <div style={{ marginRight: "2px" }}>
+              <RelatedProducts category={productData.category} />
             </div>
-            
           </div>
         </div>
       </div>

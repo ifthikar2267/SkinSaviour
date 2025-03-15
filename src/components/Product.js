@@ -68,14 +68,14 @@ const Product = () => {
   }, [sortType]);
 
   return (
-    <div>
+    <div style={{background:"#F5F0EA"}}>
       <Sidebar />
       <div className="d-flex flex-column flex-sm-row gap-1 gap-sm-4 pt-4 border-top m-1">
         {/* Filter Options */}
         <div className="min-w-60 m-4">
           <p
             onClick={() => setShowFilter(!showFilter)}
-            className="my-2 fs-4 d-flex align-items-center cursor-pointer gap-2 mt-5"
+            className="my-2 fs-4 d-flex align-items-center cursor-pointer gap-2 mt-1"
           >
             FILTERS
             <FontAwesomeIcon
@@ -165,7 +165,7 @@ const Product = () => {
 
         {/* Right Side */}
         <div className="flex-grow m-2">
-          <div className="d-flex justify-content-between align-items-center mb-4 m-1 mt-2">
+          <div className="d-flex justify-content-between align-items-center mb-4 m-1">
             <Title text1={"ALL"} text2={"COLLECTIONS"} />
 
             {/* Product Sort */}
@@ -187,7 +187,7 @@ const Product = () => {
                   to={`/product/${product._id}`}
                   className="my-2 text-decoration-none text-black"
                 >
-                  <Card className="card h-100 text-center rounded-5 border-5 border-gray">
+                  <Card className="card h-100 text-center rounded-5">
                     <Card.Img
                       variant="top"
                       src={product.image}
