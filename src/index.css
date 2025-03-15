@@ -51,6 +51,7 @@ body {
     background-repeat: no-repeat;
      z-index: 1;
      background-image: url("../public/assets/images/Leaf-bg.png");
+     pointer-events: none;
 }
 
 
@@ -83,9 +84,6 @@ body {
 
 }
 
-.product-card-bag:hover {
-  background-color: #e0e0e0; /* Slight color change on hover */
-}
 
 .home-img-fluid {
   height: 250px !important;
@@ -378,16 +376,25 @@ position: relative !important;
 }
 
 /* Add to Cart Button-home page */
-.lattest-cart-button {
+.lattestcollection-card-background {
   position: absolute;
-  bottom: 15px;
-  right: 15px;
-  background: black;
-  border: none;
-  padding: 10px;
-  border-radius: 50%;
-  color: white;
-  cursor: pointer;
+  top: 7px;
+  left: -30px;
+  width: 300px;
+  height: 100%;
+  background-size: 100%;
+  background-position: top;
+  background-repeat: no-repeat;
+   z-index: 1;
+   background-image: url("../public/assets/images/Leaf-bg.png");
+}
+
+.lattestcollection-img-fluid {
+  height: 250px !important;
+ width: 100% !important;
+margin-top: -10px !important;
+position: relative !important;
+ z-index: 2 !important;
 }
 
 /*---------------------------------------------------------------*/
@@ -403,10 +410,7 @@ position: relative !important;
   width: 100%;
 }
 
-.lattestcollection-img-fluid{
-  height: 200px !important;
-  width: 100%;
-}
+
 
 .related-img-fluid {
   height: 200px !important;
@@ -721,9 +725,14 @@ position: relative !important;
   0px 8px 15px rgba(0, 0, 0, 0.4);
 }
 
-.productdetail-title .fw-bold {
-  margin-left: -10px;
+.productdetail-title  {
+  margin-left: -223px;
+  margin-top: 30px;
   color: #000000 !important;
+}
+
+.productdetail-highlights {
+  margin-top: -30px;
 }
 
 .productDetail-arrow-left {
@@ -734,7 +743,7 @@ position: relative !important;
 }
 
 .ratingstar  {
-  margin-top: -20px;
+  margin-top: -30px;
   margin-left: -12px;
 }
 
@@ -748,6 +757,7 @@ position: relative !important;
   margin-left: 7px;
   height: auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  z-index: 10;
 }
 
 .productdetail-card-bag {
@@ -758,7 +768,7 @@ position: relative !important;
   background-color: #4A2E1D; /* Adjust color */
   border-radius: 50%; /* Makes it circular */
   padding: 10px;
-  margin-left: 330px;
+  margin-left: 344px;
   margin-top: -58px;
   width: 45px;
   height: 45px;
@@ -779,6 +789,28 @@ position: relative !important;
   width: 190px;
   margin: auto;
   
+}
+
+.productdetail-card-background {
+  position: absolute;
+  top: 65px;
+    left: 63px;
+  width: 325px;
+  height: 100%;
+  background-size: 100%;
+  background-position: top;
+  background-repeat: no-repeat;
+   z-index: 1;
+   background-image: url("../public/assets/images/Leaf-bg.png");
+   pointer-events: none;
+}
+
+.productdetail-img-fluid {
+  height: 300px !important;
+  width: 100% !important;
+ margin-top: -9px !important;
+ position: relative !important;
+  z-index: 2 !important;
 }
 /*-----------------------------*/
 /*order page*/
@@ -808,6 +840,16 @@ position: relative !important;
   transform: rotate(360deg);
   transition: transform 0.3s ease-in-out;
 }
+
+/*place order page */
+.placeorder-arrow-left {
+  font-size: 2rem; /* Adjust icon size */
+  cursor: pointer;
+  margin-left: 30px;
+  margin-top: 20px;
+  color: black !important;
+}
+
 
 
 

@@ -27,6 +27,7 @@ const LatestCollection = () => {
               className="text-decoration-none text-black"
             >
               <Card className="card h-100 rounded-5" style={{marginTop:"-15px"}}>
+              <div className="lattestcollection-card-background"></div>
                 <Card.Img
                   variant="top"
                   src={product.image}

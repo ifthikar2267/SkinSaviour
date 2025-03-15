@@ -36,6 +36,7 @@ function App() {
           <Route path="/orders" element={<Orders/>} />
           <Route path="/place-order" element={<PlaceOrder/>} />
           <Route path="/profile" element={<Profile/>}/>
+         
         </Routes>
       </div>
       

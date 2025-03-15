@@ -31,9 +31,11 @@ const ProductDetail = () => {
   }, [id, products]);
 
   const handleAddToCart = () => {
-    if (!productData) return; // Prevent errors if productData is not yet available
+    if (!productData || !productData._id) {
+      return; // Prevent errors if productData is not available
+    }
 
-    addToCart(productData._id); // Use _id instead of id
+    addToCart(productData._id);
   };
 
   if (!productData) {
@@ -57,19 +59,11 @@ const ProductDetail = () => {
         <div className="row g-4">
           {/* Product Image */}
           <div className="col-md-5">
-            <Card className="productdetail-card rounded-5 ">
-              <Card.Img
-                variant="top"
-                src={image}
-                alt={productData.title}
-                className="img-fluid rounded"
-              />
-            </Card>
+          <div className="productdetail-card-background"></div>
+          <img src={image} className="productdetail-img-fluid" />
           </div>
-
           {/* Product Info */}
-          <div className="productdetail-title col-md-7">
-            <h1 className="fw-bold">{productData.title}</h1>
+          <div className=" col-md-7">
 
             {/* Star Ratings */}
             <div className="ratingstar d-flex align-items-center justify-content-center mt-sm-0">
@@ -78,21 +72,22 @@ const ProductDetail = () => {
                   key={index}
                   icon={faStar}
                   className={`mx-1 ${
-                    index < 4 ? "text-warning" : "text-secondary"
+                    index < 4 ? "text-danger" : "text-secondary"
                   }`}
                 />
               ))}
               <p className="ms-2 mb-0">(122)</p>
             </div>
 
-            {/* Price */}
-            <p className="mt-3 h3 fw-semibold">
+            <h1 className="productdetail-title ">{productData.title}</h1>
+
+            {/* Highlights */}
+            <p className="productdetail-highlights text-muted">{productData.highlights}</p>
+             {/* Price */}
+             <p className="mt-3 h3 fw-semibold">
               {currency}
               {productData.price}
             </p>
-
-            {/* Highlights */}
-            <p className="mt-4 text-muted">{productData.highlights}</p>
 
             {/* Benefits as a List */}
             <h5 className="mt-3">
@@ -114,7 +109,10 @@ const ProductDetail = () => {
 
             {/* Add to Cart Button */}
             <button
-              onClick={handleAddToCart}
+              onClick={() => {
+                console.log("Button Clicked!");
+                handleAddToCart();
+              }}
               className="addtocart-btn fw-bold px-4 py-2 mt-3"
             >
               ADD TO CART

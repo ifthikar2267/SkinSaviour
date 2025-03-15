@@ -87,7 +87,7 @@ function Home() {
               </Card.Text>
               <FaShoppingBag
                 onClick={() => {
-                  handleAddToCart("67b19de42680e6385358d4ab");
+                  handleAddToCart("67d5b1bc0384c6f373dbe7e5");
                 }}
                 className="product-card-bag"
               />
@@ -98,7 +98,7 @@ function Home() {
             <div className="product-card-background"></div>
             <Card.Img
               variant="top"
-              src="./assets/images/Saffron-bg.png"
+              src="./assets/images/Saffron-home-bg.png"
               alt="Saffron gel"
               className="home-img-fluid"
             />
@@ -111,7 +111,7 @@ function Home() {
                 180
               </Card.Text>
               <FaShoppingBag
-                onClick={() => handleAddToCart("67c4ac849bb0c4cd1d394026")}
+                onClick={() => handleAddToCart("67d5bd440384c6f373dbe893")}
                 className="product-card-bag"
               />
             </Card.Body>
@@ -121,7 +121,7 @@ function Home() {
             <div className="product-card-background"></div>
             <Card.Img
               variant="top"
-              src="./assets/images/Redwine-bg.png"
+              src="./assets/images/redwine-home-bg.png"
               alt="Redwine gel"
               className="home-img-fluid"
             />
@@ -134,7 +134,7 @@ function Home() {
                 250
               </Card.Text>
               <FaShoppingBag
-              onClick={() => handleAddToCart("67c4acc99bb0c4cd1d394028")}
+              onClick={() => handleAddToCart("67d5bbc90384c6f373dbe87a")}
               className="product-card-bag"
             />
             </Card.Body>

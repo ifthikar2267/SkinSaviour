@@ -188,11 +188,12 @@ const Product = () => {
                   className="my-2 text-decoration-none text-black"
                 >
                   <Card className="card h-100 text-center rounded-5">
+                  <div className="lattestcollection-card-background"></div>
                     <Card.Img
                       variant="top"
                       src={product.image}
                       alt={product.title}
-                      className="product-img-fluid" 
+                      className="lattestcollection-img-fluid" 
                     />
                     <Card.Body>
                       <Card.Title className="fs-5 text-center">
