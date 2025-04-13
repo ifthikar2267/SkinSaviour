@@ -3,10 +3,12 @@ import { useNavigate, useParams } from "react-router-dom";
 import { ShopContext } from "../contexts/ShopContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
-import { Badge, Card } from "react-bootstrap";
+import { Badge } from "react-bootstrap";
 import RelatedProducts from "./RelatedProducts";
 
 import { FaArrowCircleLeft, FaShoppingBag } from "react-icons/fa";
+import ReviewList from "./ReviewList";
+import ReviewForm from "./ReviewForm";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -36,6 +38,7 @@ const ProductDetail = () => {
     }
 
     addToCart(productData._id);
+    navigate("/cart");
   };
 
   if (!productData) {
@@ -47,15 +50,15 @@ const ProductDetail = () => {
   }
 
   return (
-    <div style={{ background: "#D7AC7E" }}>
+    <div className="productdetail-bg" style={{  background: "#e4b685" }}>
       <div
-        style={{ paddingTop: "30px" }}
+        style={{ paddingTop: "30px" , overflow:"visible"}}
         className="productDetail-arrow-left"
         onClick={() => navigate(-1)}
       >
         <FaArrowCircleLeft />
       </div>
-      <div className="container mt-1 pt-4 m-1">
+      <div className="container mt-1 pt-4 m-1" style={{scrollbarWidth:"none", overflow:"visible"}}>
         <div className="row g-4">
           {/* Product Image */}
           <div className="col-md-5">
@@ -110,7 +113,6 @@ const ProductDetail = () => {
             {/* Add to Cart Button */}
             <button
               onClick={() => {
-                console.log("Button Clicked!");
                 handleAddToCart();
               }}
               className="addtocart-btn fw-bold px-4 py-2 mt-3"
@@ -156,12 +158,19 @@ const ProductDetail = () => {
 
             {/* Description & Review Section */}
             <div className="mt-4">
-              <div className="d-flex">
-                <b className="border px-5 py-3 text-sm">Description</b>
-                <p className="border px-5 py-3 text-sm mb-0">Reviews (122)</p>
+              <div className="productdetail-box d-flex">
+                {/* <b className="border px-5 py-3 text-sm" onClick={() => navigate(`/product/${id}/write-review`)}>write a review</b>
+                <p className="border px-5 py-3 text-sm mb-0" onClick={() => navigate(`/product/${id}/reviews`)}>Reviews (122)</p> */}
+                <button className="rating-button"  onClick={() => navigate(`/product/${id}/write-review`)}>
+                    Ratings & Reviews
+                </button>
+                <button className="rating-view-button" onClick={() => navigate(`/product/${id}/reviews`)}>
+                    All Reviews
+                </button>
               </div>
-
-              <p className="mt-4">
+              
+            
+              <p className="productdetail-p mt-4">
                 An e-commerce website is an online platform that facilitates the
                 buying and selling of products or services over the internet. It
                 serves as a virtual marketplace where businesses and individuals
@@ -169,7 +178,7 @@ const ProductDetail = () => {
                 conduct transactions without the need for a physical presence.
               </p>
 
-              <p>
+              <p className="productdetail-p">
                 E-commerce websites typically display products or services along
                 with detailed descriptions, images, prices, and any available
                 variations (e.g., sizes, colors). Each product usually has a
@@ -178,7 +187,7 @@ const ProductDetail = () => {
             </div>
 
             {/* Related Products */}
-            <div style={{ marginRight: "2px" }}>
+            <div className="productdetail-RP" style={{ marginRight: "2px" }}>
               <RelatedProducts category={productData.category} />
             </div>
           </div>

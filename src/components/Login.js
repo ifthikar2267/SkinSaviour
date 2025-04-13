@@ -209,7 +209,7 @@ const Login = () => {
             </Col>
           </Row>
 
-          <Button type="submit" className="w-100 mb-5" variant="dark">
+          <Button type="submit" className="w-100 mb-5" variant="dark" style={{borderRadius:"30px"}}>
             {currentState === "Login" ? "Sign In" : "Sign Up"}
           </Button>
         </Form>

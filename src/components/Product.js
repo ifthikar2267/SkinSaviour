@@ -75,7 +75,7 @@ const Product = () => {
         <div className="min-w-60 m-4">
           <p
             onClick={() => setShowFilter(!showFilter)}
-            className="my-2 fs-4 d-flex align-items-center cursor-pointer gap-2 mt-1"
+            className="my-2 fs-4 d-flex align-items-center cursor-pointer gap-2 "
           >
             FILTERS
             <FontAwesomeIcon
@@ -180,7 +180,7 @@ const Product = () => {
           </div>
 
           {/* Map Products */}
-          <div className="product-container row g-4">
+          <div className="product-container row g-4" style={{marginLeft:"-11px"}}>
             {filterProducts.map((product, index) => (
               <div key={index} className="col-6 col-md-4 col-lg-3">
                 <Link
@@ -188,18 +188,17 @@ const Product = () => {
                   className="my-2 text-decoration-none text-black"
                 >
                   <Card className="card h-100 text-center rounded-5">
-                  <div className="lattestcollection-card-background"></div>
                     <Card.Img
                       variant="top"
                       src={product.image}
                       alt={product.title}
-                      className="lattestcollection-img-fluid" 
+                      className="product-img-fluid" 
                     />
                     <Card.Body>
-                      <Card.Title className="fs-5 text-center">
+                      <Card.Title className="text-center" style={{fontSize:"1rem"}}>
                         {product.title}
                       </Card.Title>
-                      <Card.Text className="text-black fw-bold text-center">
+                      <Card.Text className="text-black fw-bold text-center" style={{fontSize:"1rem"}}>
                         {currency}
                         {product.price}
                       </Card.Text>

@@ -19,16 +19,17 @@ const RelatedProducts = ({category}) => {
     
   return (
     <div className="my-3">
-        <div className="text-center py-3 display-4 fs-2">
+        <div className="text-center py-3 display-4" style={{fontSize:"1rem"}}>
             <Title text1={'RELATED'} text2={'PRODUCTS'}/>
         </div>
-        <div className="product-container row g-4">
+        <div className="product-container row g-4" style={{marginLeft:"-17px"}}>
             {
                 related.map((product, index) => (
                     <div key={index} className="col">
                       <Link
                         to={`/product/${product._id}`} 
                         className="text-decoration-none text-black"
+                        onClick={() => window.scrollTo(0, 0)}
                       >
                         <Card className="card h-100 text-centerb   rounded-5 ">
                         <div className="lattestcollection-card-background"></div>
@@ -36,11 +37,11 @@ const RelatedProducts = ({category}) => {
                             variant="top"
                             src={product.image}
                             alt={product.title}
-                            className="lattestcollection-img-fluid"
+                            className="related-img-fluid"
                           />
                           <Card.Body>
-                            <Card.Title className="fs-5 text-center">{product.title}</Card.Title>
-                            <Card.Text className="text-black fw-bold text-center">
+                            <Card.Title className="text-center" style={{fontSize:"1rem"}}>{product.title}</Card.Title>
+                            <Card.Text className="text-black fw-bold text-center" style={{fontSize:"1rem"}}>
                               {currency} {product.price}
                             </Card.Text>
                           </Card.Body>

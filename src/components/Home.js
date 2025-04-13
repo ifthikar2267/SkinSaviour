@@ -7,6 +7,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import { Card } from "react-bootstrap";
 import { ShopContext } from "../contexts/ShopContext";
 import { FaShoppingBag } from "react-icons/fa";
+import ChatBot from "./ChatBot";
+//import Draggable from "react-draggable";
 
 function Home() {
   const navigate = useNavigate();
@@ -14,6 +16,8 @@ function Home() {
   const { products, currency, addToCart } = useContext(ShopContext);
   const [productData, setProductData] = useState(null);
   const [image, setImage] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
+  
 
   useEffect(() => {
     if (!id || !products.length) return; // Ensure id and products are available before running the search
@@ -31,6 +35,7 @@ function Home() {
 
   const handleAddToCart = (productId) => {
     addToCart(productId);
+    navigate("/cart");
   };
 
   return (
@@ -66,9 +71,9 @@ function Home() {
           Lipscrub
         </button>
       </div>
-      <div className="container-home-header text-center py-4 display-4 fs-2">
+      <div className="container-home-header text-center py-4 display-4" style={{fontSize:"1rem"}}>
         <Title text1="HERBAL" text2="PRODUCTS" />
-        <div className="carousel-container ">
+        <div className="carousel-container" style={{justifyContent:"space-around"}}>
           <Card className=" product-card rounded-5 overflow-visible">
             <div className="product-card-background"></div>
             <Card.Img
@@ -78,10 +83,10 @@ function Home() {
               className="home-img-fluid"
             />
             <Card.Body className="product-card-body">
-              <Card.Title className="fs-3 text-start fw-bold mb-1">
+              <Card.Title className="text-start fw-bold mb-1" style={{fontSize:"1rem"}}>
                 Aloevera Gel
               </Card.Title>
-              <Card.Text className="fs-3 text-start fw-bold">
+              <Card.Text className="text-start fw-bold" style={{fontSize:"1rem"}}>
                 {currency}
                 180
               </Card.Text>
@@ -103,10 +108,10 @@ function Home() {
               className="home-img-fluid"
             />
             <Card.Body className="product-card-body">
-              <Card.Title className="fs-3 text-start fw-bold">
+              <Card.Title className="text-start fw-bold" style={{fontSize:"1rem"}}>
                 Saffron Gel
               </Card.Title>
-              <Card.Text className="fs-3 text-start fw-bold">
+              <Card.Text className="text-start fw-bold" style={{fontSize:"1rem"}} >
                 {currency}
                 180
               </Card.Text>
@@ -126,21 +131,29 @@ function Home() {
               className="home-img-fluid"
             />
             <Card.Body className="product-card-body">
-              <Card.Title className="fs-3 text-start fw-bold">
+              <Card.Title className="text-start fw-bold" style={{fontSize:"1rem"}}>
                 Redwine Gel
               </Card.Title>
-              <Card.Text className="fs-3 text-start fw-bold">
+              <Card.Text className="text-start fw-bold" style={{fontSize:"1rem"}}>
                 {currency}
                 250
               </Card.Text>
               <FaShoppingBag
-              onClick={() => handleAddToCart("67d5bbc90384c6f373dbe87a")}
+              onClick={() => handleAddToCart("67e197d478cecad20e109adf")}
               className="product-card-bag"
             />
             </Card.Body>
             
           </Card>
         </div>
+      
+        
+            <div className="chatbot-content">
+            {!isOpen && (
+                <ChatBot  onClick={() => setIsOpen(true)}/> 
+              )}
+            </div>
+    
 
         <div
           style={{

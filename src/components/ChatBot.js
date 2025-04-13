@@ -60,13 +60,13 @@ const ChatBot = () => {
   };
 
   return (
-    <Container className="mt-3">
+    <Container className="mt-3" style={{scrollbarWidth:"none", overflowY:"hidden"}}>
       <div className="text-center">
         <img
-          src="./assets/images/robot.png"
+          src="./assets/images/robo1.gif"
           alt="Chatbot"
           className="rounded-circle"
-          style={{ width: "50px", height: "50px", cursor: "pointer" }}
+          style={{ width: "180px", height: "180px", cursor: "pointer", marginRight: "-68px" , marginBottom:"-42px"}}
           onClick={() => setShowChat(true)}
         />
       </div>
@@ -76,8 +76,8 @@ const ChatBot = () => {
           <Modal.Title>AI Chatbot</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Card className="p-3 shadow-sm" style={{margin:"70px"}}>
-            <Card.Body style={{ height: "300px", overflowY: "auto" }}>
+          <Card className="chatbot-container p-3 shadow-sm" style={{margin:"12px",width:"82vw"}}>
+            <Card.Body style={{ height: "40vh", overflowY: "auto" }}>
               {messages.map((msg, index) => (
                 <div key={index} className={`p-2 my-1 ${msg.sender === "user" ? "text-end" : "text-start"}`}>
                   <b>{msg.sender === "user" ? "You: " : "Bot: "}</b>

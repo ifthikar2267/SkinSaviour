@@ -5,10 +5,42 @@ import { ShopContext } from "../contexts/ShopContext";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import Sidebar from "./Sidebar";
 import { FaArrowCircleLeft } from "react-icons/fa";
 
 const PlaceOrder = () => {
+
+   //send notification to admin when order confirmed
+   const confirmOrder = async (totalAmount, userId, items, shippingAddress) => {
+    try {
+        const token = localStorage.getItem("token");
+
+        const response = await fetch(backendUrl + "/api/order/place", {
+            method: "POST",
+            headers: { 
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}` 
+          },
+            body: JSON.stringify({
+                userId,
+                items,
+                totals: { total: totalAmount },
+                shippingAddress: (shippingAddress),
+                paymentMethod: "Cash on Delivery",
+            }),
+        });
+
+        const data = await response.json();
+        if (data.success) {
+            toast.success("Order placed successfully!");
+        } else {
+            console.log(`Failed to place order: ${data.message}`);
+        }
+    } catch (error) {
+        console.error("Error confirming order:", error);
+        toast.error("An error occurred while placing the order.");
+    }
+};
+/*------------------------------------------------------- */
   const [method, setMethod] = useState("cod");
   const {
     products,
@@ -21,6 +53,7 @@ const PlaceOrder = () => {
   } = useContext(ShopContext);
   const navigate = useNavigate();
   const [userId, setUserId] = useState(null);
+  const [orderSuccess, setOrderSuccess] = useState(false);
 
   useEffect(() => {
     const storedUserId = localStorage.getItem("userId");
@@ -52,6 +85,7 @@ const PlaceOrder = () => {
     email: "",
     street: "",
     city: "",
+    district: "",
     state: "",
     zipCode: "",
     country: "",
@@ -79,7 +113,7 @@ const PlaceOrder = () => {
           
           setFormData((data) => ({
             ...data,
-            city: placeData.District,
+            district: placeData.District,
             state: placeData.State,
             zipCode: value,
           }));
@@ -118,9 +152,16 @@ const PlaceOrder = () => {
           );
 
           if (data.success) {
-            toast.success("Payment successful! Your order is confirmed");
+            setOrderSuccess(true); // Show success GIF
+           // toast.success("Payment successful! Your order is confirmed");
             setCartItems({});
-            navigate("/orders");
+            setTimeout(() => {
+              setOrderSuccess(false);
+              navigate("/orders");
+            }, 2000);
+            // Call confirmOrder function to send notification
+            confirmOrder(orderData.totals.total, userId, orderData.items, orderData.shippingAddress);
+
           } else {
             toast.error("Payment verification failed.");
           }
@@ -142,6 +183,12 @@ const PlaceOrder = () => {
 
   const onSubmitHandler = async (event) => {
     event.preventDefault();
+
+     // Check if the cart is empty
+  if (Object.keys(cartItems).length === 0 || getCartAmount() === 0) {
+    toast.error("Your cart is empty! Please add products before placing an order.");
+    return;
+  }
 
     try {
       let orderItems = [];
@@ -165,6 +212,7 @@ const PlaceOrder = () => {
           lastName: formData.lastName,
           address: formData.street,
           city: formData.city,
+          district: formData.district,
           state: formData.state,
           zipCode: formData.zipCode,
           country: formData.country,
@@ -215,11 +263,19 @@ const PlaceOrder = () => {
           );
 
           if (responseCOD.data.success) {
-            toast.success(
-              "Order placed successfully! Please pay upon delivery."
-            );
-            setCartItems({}); // Clear cart
-            navigate("/orders"); // Redirect to orders page
+            setOrderSuccess(true); // Show success GIF
+            // toast.success(
+            //   "Order placed successfully! Please pay upon delivery."
+            // );
+            setCartItems({}); 
+            setTimeout(() => {
+              setOrderSuccess(false);
+              navigate("/orders");
+            }, 2000);
+            
+            // Call confirmOrder function to send notification
+            confirmOrder(orderData.totals.total, userId, orderData.items, orderData.shippingAddress);
+           
           } else {
             toast.error("Error placing COD order.");
           }
@@ -233,12 +289,19 @@ const PlaceOrder = () => {
       toast.error("Error processing your order.");
     }
   };
+  
 
   return (
     <div>
       <div className="placeorder-arrow-left" onClick={() => navigate(-1)}>
         <FaArrowCircleLeft />
       </div>
+      {orderSuccess ? (
+        <div className="text-center">
+          <img src={"./assets/images/success.gif"} alt="Order Success" width="250px" style={{marginTop:"150px"}} />
+          <h4 className="text-success fw-bold">Order Placed Successfully!</h4>
+        </div>
+      ) : (
       <form onSubmit={onSubmitHandler} className="container ">
         <div className=" row justify-content-center">
           <div className="col-md-6">
@@ -256,6 +319,7 @@ const PlaceOrder = () => {
                   type="text"
                   className="form-control"
                   placeholder="First name"
+                  style={{borderRadius:"30px"}}
                 />
               </div>
               <div className="col">
@@ -267,6 +331,7 @@ const PlaceOrder = () => {
                   type="text"
                   className="form-control"
                   placeholder="Last name"
+                  style={{borderRadius:"30px"}}
                 />
               </div>
             </div>
@@ -280,6 +345,7 @@ const PlaceOrder = () => {
                 type="email"
                 className="form-control"
                 placeholder="Email address"
+                style={{borderRadius:"30px"}}
               />
             </div>
 
@@ -292,6 +358,20 @@ const PlaceOrder = () => {
                 type="text"
                 className="form-control"
                 placeholder="Door No & Street"
+                style={{borderRadius:"30px"}}
+              />
+            </div>
+
+            <div className="mb-3">
+              <input
+                 required
+                 onChange={onChangeHandler}
+                 name="city"
+                 value={formData.city}
+                 type="text"
+                 className="form-control"
+                 placeholder="City"
+                 style={{borderRadius:"30px"}}
               />
             </div>
 
@@ -305,17 +385,19 @@ const PlaceOrder = () => {
                   type="number"
                   className="form-control"
                   placeholder="Zipcode"
+                  style={{borderRadius:"30px"}}
                 />
               </div>
               <div className="col">
                 <input
-                  required
-                  onChange={onChangeHandler}
-                  name="city"
-                  value={formData.city}
-                  type="text"
-                  className="form-control"
-                  placeholder="City"
+                 required
+                 onChange={onChangeHandler}
+                 name="district"
+                 value={formData.district}
+                 type="text"
+                 className="form-control"
+                 placeholder="District"
+                 style={{borderRadius:"30px"}}
                 />
               </div>
             </div>
@@ -330,6 +412,7 @@ const PlaceOrder = () => {
                   type="text"
                   className="form-control"
                   placeholder="State"
+                  style={{borderRadius:"30px"}}
                 />
               </div>
               <div className="col">
@@ -341,6 +424,7 @@ const PlaceOrder = () => {
                   type="text"
                   className="form-control"
                   placeholder="Country"
+                  style={{borderRadius:"30px"}}
                 />
               </div>
             </div>
@@ -354,6 +438,7 @@ const PlaceOrder = () => {
                 type="number"
                 className="form-control"
                 placeholder="Phone"
+                style={{borderRadius:"30px"}}
               />
             </div>
 
@@ -372,18 +457,18 @@ const PlaceOrder = () => {
                 <div
                   onClick={() => setMethod("razorpay")}
                   className="d-flex align-items-center gap-3 border p-2 px-3 cursor-pointer"
-                  style={{ cursor: "pointer" }}
+                  style={{ cursor: "pointer", borderRadius:"30px"}}
                 >
                   <p
                     className={`border rounded-circle ${
                       method === "razorpay" ? "bg-success" : ""
                     }`}
-                    style={{ minWidth: "20px", height: "20px" }}
+                    style={{ minWidth: "20px", height: "20px",marginTop:"9px"}}
                   ></p>
                   <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Razorpay_logo.webp"
-                    className="img-fluid"
-                    style={{ width: "100px", height: "50px" }}
+                    src="./assets/images/razorpay-img.png"
+                    className="razorpay-img-fluid"
+                    style={{ width: "100px", height: "50px", marginLeft:"85px" }}
                     alt="Razorpay Logo"
                   />
                 </div>
@@ -392,15 +477,15 @@ const PlaceOrder = () => {
                 <div
                   onClick={() => setMethod("cod")}
                   className="d-flex align-items-center gap-3 border p-2 px-3 cursor-pointer"
-                  style={{ cursor: "pointer" }}
+                  style={{ cursor: "pointer", borderRadius:"30px" }}
                 >
                   <p
                     className={`border rounded-circle ${
                       method === "cod" ? "bg-success" : ""
                     }`}
-                    style={{ minWidth: "20px", height: "20px" }}
+                    style={{ minWidth: "20px", height: "20px", marginTop:"9px" }}
                   ></p>
-                  <span className="fs-3 fw-bold text-dark">
+                  <span className="fs-3 fw-bold text-dark" style={{marginLeft:"24px"}}>
                     CASH ON DELIVERY
                   </span>
                 </div>
@@ -409,6 +494,8 @@ const PlaceOrder = () => {
                 <button
                   type="submit"
                   className="btn btn-dark btn-sm px-4 py-2 mt-3"
+                  style={{borderRadius:"30px"}}
+                  disabled={Object.keys(cartItems).length === 0 || getCartAmount() === 0}
                 >
                   PLACE ORDER
                 </button>
@@ -417,6 +504,7 @@ const PlaceOrder = () => {
           </div>
         </div>
       </form>
+      )}
     </div>
   );
 };

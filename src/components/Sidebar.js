@@ -32,13 +32,12 @@ import {
 */
 
 const Sidebar = () => {
-  const { getTotalCartCount, backendUrl, token, setToken, setCartItems } =
+  const { getTotalCartCount, backendUrl, token, setToken, setCartItems,  setShowSearch} =
     useContext(ShopContext);
   const cartCount = getTotalCartCount();
   const [visible, setVisible] = useState(false);
   const [userName, setUserName] = useState("");
   const [firstLetter, setFirstLetter] = useState("");
-  const { setShowSearch } = useContext(ShopContext);
   const [isSticky, setIsSticky] = useState(false);
   const navigate = useNavigate();
 
@@ -102,12 +101,6 @@ const Sidebar = () => {
   return (
     <>
       <div className="top-navbar d-flex align-items-center">
-        <h4 className="head">
-          Skinsaviour ChatBot -{" "}
-          <span className="chatbot-inline">
-            <ChatBot />
-          </span>
-        </h4>
       </div>
       <div className={`floating-navbar w-100 p-2 ${isSticky ? "sticky" : ""}`}>
         <Navbar
@@ -129,28 +122,28 @@ const Sidebar = () => {
             onClick={() => setVisible(!visible)} 
           />
 
-          <Navbar.Collapse id="basic-navbar-nav">
+          <Navbar.Collapse id="basic-navbar-nav"  style={{justifyContent:"space-around"}}>
             <Nav className="ml-auto">
-              <Nav.Item>
-                <NavLink to="/" className="nav-link">
+              <Nav.Item >
+                <NavLink to="/" className="nav-link" style={{color:"white"}}>
                   HOME
                 </NavLink>
               </Nav.Item>
 
               <Nav.Item>
-                <NavLink to="/product" className="nav-link">
+                <NavLink to="/product" className="nav-link" style={{color:"white"}}>
                   PRODUCT
                 </NavLink>
               </Nav.Item>
 
               <Nav.Item>
-                <NavLink to="/about" className="nav-link">
+                <NavLink to="/about" className="nav-link" style={{color:"white"}}>
                   ABOUT
                 </NavLink>
               </Nav.Item>
 
               <Nav.Item>
-                <NavLink to="/contact" className="nav-link">
+                <NavLink to="/contact" className="nav-link" style={{color:"white"}}>
                   CONTACT
                 </NavLink>
               </Nav.Item>

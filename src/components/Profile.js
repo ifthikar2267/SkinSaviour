@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
-import { Button, NavLink } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { ShopContext } from "../contexts/ShopContext";
 import { FaArrowCircleLeft } from "react-icons/fa";
@@ -122,9 +122,9 @@ const Profile = () => {
             <div>
               <b>Shipping Address:</b> <br />
               {shippingAddress.firstName} {shippingAddress.lastName} <br />
-              {shippingAddress.address}, {shippingAddress.city},{" "}<br />
+              {shippingAddress.address}, {shippingAddress.city}, {shippingAddress.district}{" "}<br />
               {shippingAddress.state},{" "}
-              {shippingAddress.zipCode}, {shippingAddress.country} <br />
+              {shippingAddress.zipCode}, <br /> {shippingAddress.country} <br />
               Phone: {shippingAddress.phoneNumber}
             </div>
           ) : (

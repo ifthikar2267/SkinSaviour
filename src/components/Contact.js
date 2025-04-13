@@ -68,7 +68,7 @@ const Contact = () => {
       <div className="contact-arrow-left" onClick={() => navigate(-1)}>
         <FaArrowCircleLeft />
       </div>
-      <div style={{ marginTop: "0px", height:"91.5vh" }}>
+      <div style={{ marginTop: "0px", height:"100.5vh"}}>
         <h1 >Contact Us</h1>
         <form className="contact-container" onSubmit={handleSubmit} id="form">
           <div className="name">

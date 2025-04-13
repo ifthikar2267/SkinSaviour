@@ -14,29 +14,28 @@ const LatestCollection = () => {
   }, [products]);
 
   return (
-    <div style={{marginTop:"-10px"}}>
-      <div className="lattestcollection-container text-center display-4 mb-5 fs-2">
+    <div style={{marginTop:"5px"}}>
+      <div className="lattestcollection-container text-center display-4 mb-5" style={{fontSize:"1rem"}}>
         <Title text1="LATEST" text2="COLLECTIONS" />
       </div>
 
-      <div className="product-container row g-4 ">
+      <div className="product-container row g-4" style={{marginLeft:"-11px"}}>
         {latestProducts.map((product, index) => (
           <div key={index} className="col">
             <Link
               to={`/product/${product._id}`} 
               className="text-decoration-none text-black"
             >
-              <Card className="card h-100 rounded-5" style={{marginTop:"-15px"}}>
-              <div className="lattestcollection-card-background"></div>
+              <Card className="card h-100 text-center rounded-5">
                 <Card.Img
                   variant="top"
                   src={product.image}
                   alt={product.title}
                   className="lattestcollection-img-fluid"
                 />
-                <Card.Body>
-                  <Card.Title className="fs-5 text-center">{product.title}</Card.Title>
-                  <Card.Text className="text-black fw-bold fs-4">
+                <Card.Body >
+                  <Card.Title className=" text-center" style={{fontSize:"1rem"}}>{product.title}</Card.Title>
+                  <Card.Text className="text-black fw-bold" style={{fontSize:"1rem"}}>
                     {currency}{product.price}
                   </Card.Text>
                 </Card.Body>
